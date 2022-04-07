@@ -29,23 +29,24 @@ namespace IncidenciasProyect
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEntrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnEntrar
             // 
-            this.button1.Location = new System.Drawing.Point(166, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "ENTRAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEntrar.Location = new System.Drawing.Point(166, 191);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(75, 23);
+            this.btnEntrar.TabIndex = 0;
+            this.btnEntrar.Text = "ENTRAR";
+            this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // label1
             // 
@@ -74,43 +75,47 @@ namespace IncidenciasProyect
             this.label3.TabIndex = 3;
             this.label3.Text = "INGRESO";
             // 
-            // textBox1
+            // txtUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(155, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtUsuario.Location = new System.Drawing.Point(155, 93);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuario.TabIndex = 4;
             // 
-            // textBox2
+            // txtContraseña
             // 
-            this.textBox2.Location = new System.Drawing.Point(155, 145);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtContraseña.Location = new System.Drawing.Point(155, 145);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
+            this.txtContraseña.Size = new System.Drawing.Size(100, 20);
+            this.txtContraseña.TabIndex = 5;
             // 
-            // button2
+            // btnSalir
             // 
-            this.button2.Location = new System.Drawing.Point(356, 241);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "X";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSalir.Location = new System.Drawing.Point(356, 241);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(32, 23);
+            this.btnSalir.TabIndex = 6;
+            this.btnSalir.Text = "X";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.button2_Click);
             // 
             // Logueo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(400, 276);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEntrar);
+            this.MaximizeBox = false;
             this.Name = "Logueo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logueo";
             this.Load += new System.EventHandler(this.Logueo_Load);
             this.ResumeLayout(false);
@@ -120,12 +125,12 @@ namespace IncidenciasProyect
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

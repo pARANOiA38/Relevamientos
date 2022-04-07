@@ -13,7 +13,7 @@ namespace LogicaIncidencias
         public  List<Usuario> Usuarios { get; set; }
         public List<Problema> Problemas { get; set; }
 
-        public void AgregarIncidencia(string observacion, string dependencia, string sucursal)
+        public void AgregarIncidencia(string observacion, string dependencia, string sucursal, string responsable)
         {
             Problema newIncidencia = new Problema();
 
@@ -22,7 +22,8 @@ namespace LogicaIncidencias
             newIncidencia.observacion = observacion;
             newIncidencia.sucursarl = sucursal;
             newIncidencia.FechaHoy = DateTime.Today;
-            newIncidencia.estado = false;
+            newIncidencia.estado = "PENDIENTE";
+            newIncidencia.responsable = responsable;
 
             Problemas.Add(newIncidencia);
         }
@@ -40,7 +41,12 @@ namespace LogicaIncidencias
             }
         }
 
-        public void ModificarIncidencia(int cod, string observacion, string dependencia, string sucursal, bool estado)
+        public List<Problema> ObtenerProblemas()
+        {
+            return Problemas;
+        }
+
+        public void ModificarIncidencia(int cod, string observacion, string dependencia, string sucursal, string estado, string responsable)
         {
             foreach (var item in Problemas)
             {
@@ -51,13 +57,14 @@ namespace LogicaIncidencias
                     item.sucursarl = sucursal;
                     item.estado = estado;
                     item.FechaHoy = DateTime.Today;
+                    item.responsable = responsable;
 
                     break;
                 }
             }
         }
 
-        public void CambiarEstado(int cod, bool estado)
+        public void CambiarEstado(int cod, string estado)
         {
             foreach (var item in Problemas)
             {
@@ -73,12 +80,28 @@ namespace LogicaIncidencias
         public int DevolverCod()
         {
             int cod = 1;
-            if (Problemas != null)
+            if (Problemas != null | Problemas.Count == 0)
             {
                 cod = Problemas.Count() + 1;
             }
             return cod;
         }
+
+        public bool ValidarUsuario(string user, string pass)
+        {
+            bool aceptacion = false;
+
+            foreach (var item in Usuarios)
+            {
+                if (item.user == user && item.pass == pass)
+                {
+                    aceptacion = true;
+                }
+            }
+            return aceptacion;
+        }
+
+
 
         public void GenerarArchivosTXT()
         {
@@ -88,11 +111,11 @@ namespace LogicaIncidencias
                 DirectoryInfo di = Directory.CreateDirectory(path);
                 using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Problemas.txt", false)) ;
             }
-            if (!File.Exists(@"c:\ArchivosTXT\Usuario.txt"))
+            if (!File.Exists(@"c:\ArchivosTXT\Usuarios.txt"))
             {
                 string path = @"c:\ArchivosTXT";
                 DirectoryInfo di = Directory.CreateDirectory(path);
-                using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Usuario.txt", false)) ;
+                using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Usuarios.txt", false)) ;
             }
         }
 
@@ -100,7 +123,7 @@ namespace LogicaIncidencias
         {
             List<Usuario> ListaUsuario = new List<Usuario>();
 
-            using (StreamReader reader = new StreamReader(@"c:\ArchivosTXT\Usuario.txt"))
+            using (StreamReader reader = new StreamReader(@"c:\ArchivosTXT\Usuarios.txt"))
             {
                 string contenido = reader.ReadToEnd();
                 ListaUsuario = JsonConvert.DeserializeObject<List<Usuario>>(contenido);
@@ -140,6 +163,18 @@ namespace LogicaIncidencias
             {
                 string jsonguardarIncidencias = JsonConvert.SerializeObject(listIncidencias);
                 write.WriteLine(jsonguardarIncidencias);
+            }
+
+        }
+
+        public void GuardarUsuarios()
+        {
+            List<Usuario> listUsuarios = Usuarios;
+
+            using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Usuarios.txt", false))
+            {
+                string jsonguardarUsuarios = JsonConvert.SerializeObject(listUsuarios);
+                write.WriteLine(jsonguardarUsuarios);
             }
 
         }

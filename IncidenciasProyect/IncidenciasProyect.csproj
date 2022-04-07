@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IFuncionesYmetodosUsuario.cs" />
     <Compile Include="Logueo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,8 +67,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Incidencia.resx">
+      <DependentUpon>Incidencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logueo.resx">
       <DependentUpon>Logueo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

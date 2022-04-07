@@ -13,6 +13,7 @@ namespace LogicaIncidencias
         public string observacion { get; set; }
         public string sucursarl { get; set; }
         public DateTime FechaHoy { get; set; }
-        public bool estado { get; set; }
+        public string estado { get; set; }
+        public string responsable { get; set; }
     }
 }
