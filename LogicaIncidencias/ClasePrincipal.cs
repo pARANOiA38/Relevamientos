@@ -10,12 +10,12 @@ namespace LogicaIncidencias
 {
     public class ClasePrincipal
     {
-        public  List<Incidencia> Incidencias { get; set; }
         public  List<Usuario> Usuarios { get; set; }
+        public List<Problema> Problemas { get; set; }
 
         public void AgregarIncidencia(string observacion, string dependencia, string sucursal)
-        {         
-            Incidencia newIncidencia = new Incidencia();
+        {
+            Problema newIncidencia = new Problema();
 
             newIncidencia.cod = DevolverCod();
             newIncidencia.dependencia = dependencia;
@@ -24,16 +24,16 @@ namespace LogicaIncidencias
             newIncidencia.FechaHoy = DateTime.Today;
             newIncidencia.estado = false;
 
-            Incidencias.Add(newIncidencia);
+            Problemas.Add(newIncidencia);
         }
 
         public void EliminarIncidencia(int cod)
         {
-            foreach (var item in Incidencias)
+            foreach (var item in Problemas)
             {
                 if (item.cod == cod)
                 {
-                    Incidencias.Remove(item);
+                    Problemas.Remove(item);
 
                     break;
                 }
@@ -42,7 +42,7 @@ namespace LogicaIncidencias
 
         public void ModificarIncidencia(int cod, string observacion, string dependencia, string sucursal, bool estado)
         {
-            foreach (var item in Incidencias)
+            foreach (var item in Problemas)
             {
                 if (item.cod == cod)
                 {
@@ -59,7 +59,7 @@ namespace LogicaIncidencias
 
         public void CambiarEstado(int cod, bool estado)
         {
-            foreach (var item in Incidencias)
+            foreach (var item in Problemas)
             {
                 if (item.cod == cod)
                 {                 
@@ -73,20 +73,20 @@ namespace LogicaIncidencias
         public int DevolverCod()
         {
             int cod = 1;
-            if (Incidencias != null)
+            if (Problemas != null)
             {
-                cod = Incidencias.Count() + 1;
+                cod = Problemas.Count() + 1;
             }
             return cod;
         }
 
         public void GenerarArchivosTXT()
         {
-            if (!File.Exists(@"c:\ArchivosTXT\Incidencias.txt"))
+            if (!File.Exists(@"c:\ArchivosTXT\Problemas.txt"))
             {
                 string path = @"c:\ArchivosTXT";
                 DirectoryInfo di = Directory.CreateDirectory(path);
-                using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Incidencias.txt", false)) ;
+                using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Problemas.txt", false)) ;
             }
             if (!File.Exists(@"c:\ArchivosTXT\Usuario.txt"))
             {
@@ -114,29 +114,29 @@ namespace LogicaIncidencias
 
             Usuarios = ListaUsuario;
 
-            List<Incidencia> ListaIncidencias = new List<Incidencia>();
+            List<Problema> ListaIncidencias = new List<Problema>();
 
-            using (StreamReader reader = new StreamReader(@"c:\ArchivosTXT\Administradores.txt"))
+            using (StreamReader reader = new StreamReader(@"c:\ArchivosTXT\Problemas.txt"))
             {
                 string contenido = reader.ReadToEnd();
-                ListaIncidencias = JsonConvert.DeserializeObject<List<Incidencia>>(contenido);
+                ListaIncidencias = JsonConvert.DeserializeObject<List<Problema>>(contenido);
 
                 if (ListaIncidencias == null)
                 {
-                    ListaIncidencias = new List<Incidencia>();
+                    ListaIncidencias = new List<Problema>();
                 }
 
             }
 
-            Incidencias = ListaIncidencias;
+            Problemas = ListaIncidencias;
 
         }
 
         public void GuardarIncidencias()
         {
-            List<Incidencia> listIncidencias = Incidencias;
+            List<Problema> listIncidencias = Problemas;
 
-            using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Incidencia.txt", false))
+            using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Problemas.txt", false))
             {
                 string jsonguardarIncidencias = JsonConvert.SerializeObject(listIncidencias);
                 write.WriteLine(jsonguardarIncidencias);

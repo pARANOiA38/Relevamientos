@@ -26,12 +26,10 @@ namespace IncidenciasProyect
 
         private void Logueo_Load(object sender, EventArgs e)
         {
-            this.nuevaClasePrincipal = new ClasePrincipal();
-
-
+            this.nuevaClasePrincipal = new ClasePrincipal();           
 
             nuevaClasePrincipal.Usuarios = new List<Usuario>();
-            nuevaClasePrincipal.Incidencias = new List<Incidencia>();
+            nuevaClasePrincipal.Problemas = new List<Problema>();
 
             nuevaClasePrincipal.GenerarArchivosTXT();
 
