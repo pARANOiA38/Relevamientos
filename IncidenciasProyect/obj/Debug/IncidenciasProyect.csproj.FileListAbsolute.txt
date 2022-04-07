@@ -1,0 +1,10 @@
+C:\Users\emmas\source\repos\IncidenciasProyect\bin\Debug\IncidenciasProyect.exe.config
+C:\Users\emmas\source\repos\IncidenciasProyect\bin\Debug\IncidenciasProyect.exe
+C:\Users\emmas\source\repos\IncidenciasProyect\bin\Debug\IncidenciasProyect.pdb
+C:\Users\emmas\source\repos\IncidenciasProyect\obj\Debug\IncidenciasProyect.csproj.AssemblyReference.cache
+C:\Users\emmas\source\repos\IncidenciasProyect\obj\Debug\IncidenciasProyect.Logueo.resources
+C:\Users\emmas\source\repos\IncidenciasProyect\obj\Debug\IncidenciasProyect.Properties.Resources.resources
+C:\Users\emmas\source\repos\IncidenciasProyect\obj\Debug\IncidenciasProyect.csproj.GenerateResource.cache
+C:\Users\emmas\source\repos\IncidenciasProyect\obj\Debug\IncidenciasProyect.csproj.CoreCompileInputs.cache
+C:\Users\emmas\source\repos\IncidenciasProyect\obj\Debug\IncidenciasProyect.exe
+C:\Users\emmas\source\repos\IncidenciasProyect\obj\Debug\IncidenciasProyect.pdb
