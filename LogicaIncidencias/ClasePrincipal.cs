@@ -21,7 +21,7 @@ namespace LogicaIncidencias
             newIncidencia.dependencia = dependencia;
             newIncidencia.observacion = observacion;
             newIncidencia.sucursarl = sucursal;
-            newIncidencia.FechaHoy = DateTime.Today;
+            newIncidencia.FechaHoy = DateTime.Now.ToString("dd/MM/yyyy");
             newIncidencia.estado = "PENDIENTE";
             newIncidencia.responsable = responsable;
 
@@ -56,7 +56,7 @@ namespace LogicaIncidencias
                     item.observacion = observacion;
                     item.sucursarl = sucursal;
                     item.estado = estado;
-                    item.FechaHoy = DateTime.Today;
+                    item.FechaHoy = DateTime.Now.ToString("dd/MM/yyyy");
                     item.responsable = responsable;
 
                     break;

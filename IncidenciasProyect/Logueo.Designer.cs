@@ -36,6 +36,7 @@ namespace IncidenciasProyect
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnIncidencias = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEntrar
@@ -92,7 +93,7 @@ namespace IncidenciasProyect
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(356, 241);
+            this.btnSalir.Location = new System.Drawing.Point(356, 336);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(32, 23);
             this.btnSalir.TabIndex = 6;
@@ -100,12 +101,23 @@ namespace IncidenciasProyect
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnIncidencias
+            // 
+            this.btnIncidencias.Location = new System.Drawing.Point(159, 264);
+            this.btnIncidencias.Name = "btnIncidencias";
+            this.btnIncidencias.Size = new System.Drawing.Size(87, 23);
+            this.btnIncidencias.TabIndex = 7;
+            this.btnIncidencias.Text = "INCIDENCIAS";
+            this.btnIncidencias.UseVisualStyleBackColor = true;
+            this.btnIncidencias.Click += new System.EventHandler(this.btnIncidencias_Click);
+            // 
             // Logueo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(400, 276);
+            this.ClientSize = new System.Drawing.Size(400, 371);
+            this.Controls.Add(this.btnIncidencias);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
@@ -132,5 +144,6 @@ namespace IncidenciasProyect
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnIncidencias;
     }
 }

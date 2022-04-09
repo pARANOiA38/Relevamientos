@@ -7,3 +7,12 @@ C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\LogicaIncidencias\o
 C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\LogicaIncidencias\obj\Debug\LogicaIncidencias.csproj.CopyComplete
 C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\LogicaIncidencias\obj\Debug\LogicaIncidencias.dll
 C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\LogicaIncidencias\obj\Debug\LogicaIncidencias.pdb
+C:\Users\emmas\Desktop\Relevamientos\LogicaIncidencias\bin\Debug\LogicaIncidencias.dll
+C:\Users\emmas\Desktop\Relevamientos\LogicaIncidencias\bin\Debug\LogicaIncidencias.pdb
+C:\Users\emmas\Desktop\Relevamientos\LogicaIncidencias\bin\Debug\Newtonsoft.Json.dll
+C:\Users\emmas\Desktop\Relevamientos\LogicaIncidencias\bin\Debug\Newtonsoft.Json.xml
+C:\Users\emmas\Desktop\Relevamientos\LogicaIncidencias\obj\Debug\LogicaIncidencias.csproj.AssemblyReference.cache
+C:\Users\emmas\Desktop\Relevamientos\LogicaIncidencias\obj\Debug\LogicaIncidencias.csproj.CoreCompileInputs.cache
+C:\Users\emmas\Desktop\Relevamientos\LogicaIncidencias\obj\Debug\LogicaIncidencias.csproj.CopyComplete
+C:\Users\emmas\Desktop\Relevamientos\LogicaIncidencias\obj\Debug\LogicaIncidencias.dll
+C:\Users\emmas\Desktop\Relevamientos\LogicaIncidencias\obj\Debug\LogicaIncidencias.pdb

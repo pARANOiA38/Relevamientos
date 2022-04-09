@@ -26,6 +26,7 @@ namespace IncidenciasProyect
 
         private void Logueo_Load(object sender, EventArgs e)
         {
+            btnIncidencias.Visible = false;
             this.nuevaClasePrincipal = new ClasePrincipal();           
 
             nuevaClasePrincipal.Usuarios = new List<Usuario>();
@@ -37,8 +38,8 @@ namespace IncidenciasProyect
 
             Usuario nuevouser = new Usuario();
 
-            nuevouser.user = "emmanuel";
-            nuevouser.pass = "schenoni";
+            nuevouser.user = "javier";
+            nuevouser.pass = "comini";
 
             nuevaClasePrincipal.Usuarios.Add(nuevouser);
 
@@ -74,9 +75,12 @@ namespace IncidenciasProyect
                     }
                     else
                     {
-                        Incidencia nuevoIncidencia = new Incidencia();
-                        nuevoIncidencia.Owner = this;
-                        nuevoIncidencia.ShowDialog();
+                        btnIncidencias.Visible = true;
+                        txtContraseña.Enabled = false;
+                        txtUsuario.Enabled = false;
+                        txtContraseña.Text = "";
+                        txtUsuario.Text = "";
+                        btnEntrar.Enabled = false;
                     }
                 }
             }
@@ -118,6 +122,13 @@ namespace IncidenciasProyect
         public List<Problema> ObtenerProblemas()
         {
             return nuevaClasePrincipal.ObtenerProblemas();
+        }
+
+        private void btnIncidencias_Click(object sender, EventArgs e)
+        {
+            Incidencia nuevoIncidencia = new Incidencia();
+            nuevoIncidencia.Owner = this;
+            nuevoIncidencia.ShowDialog();
         }
     }
 }
