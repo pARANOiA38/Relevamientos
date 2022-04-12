@@ -18,14 +18,38 @@ namespace IncidenciasProyect
             InitializeComponent();
         }
 
-        private void Incidencia_Load(object sender, EventArgs e)
+        private void CargarGrilla(Problema item)
         {
+            int n = grilla.Rows.Add();
+
+            grilla.Rows[n].Cells[0].Value = item.cod;
+            grilla.Rows[n].Cells[1].Value = item.FechaHoy;
+            grilla.Rows[n].Cells[2].Value = item.dependencia;
+            grilla.Rows[n].Cells[3].Value = item.sucursarl;
+            grilla.Rows[n].Cells[4].Value = item.responsable;
+            grilla.Rows[n].Cells[5].Value = item.observacion;
+            grilla.Rows[n].Cells[6].Value = item.estado;
+
+            if (item.estado == "PENDIENTE")
+            {
+                grilla.Rows[n].Cells[6].Style.BackColor = Color.Red;
+
+            }
+            else
+            {
+                grilla.Rows[n].Cells[6].Style.BackColor = Color.Green;
+            }
+        }
+        private void Incidencia_Load(object sender, EventArgs e)
+        {         
+            btnHabilitarModificacion.Enabled = false;
             txtDependencia.Enabled = false;
             txtObservaciones.Enabled = false;
             boxResponsable.Enabled = false;
             boxSucursal.Enabled = false;
             btnModificar.Enabled = false;
             btnAgregar.Enabled = false;
+            btnCambiarEstado.Enabled = false;
 
             List<Problema> nuevaListaProblema = new List<Problema>();
 
@@ -37,14 +61,7 @@ namespace IncidenciasProyect
                 foreach (var item in nuevaListaProblema)
                 {
 
-                    int n = grilla.Rows.Add();
-
-                    grilla.Rows[n].Cells[0].Value = item.cod;
-                    grilla.Rows[n].Cells[1].Value = item.sucursarl;
-                    grilla.Rows[n].Cells[2].Value = item.dependencia;
-                    grilla.Rows[n].Cells[3].Value = item.estado;
-                    grilla.Rows[n].Cells[4].Value = item.FechaHoy;
-                    grilla.Rows[n].Cells[3].Value = item.responsable;
+                    CargarGrilla(item);
 
                 }
             }
@@ -57,7 +74,7 @@ namespace IncidenciasProyect
             IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
             if (formInterfaz != null)
             {
-                if (txtDependencia.Text != null && txtObservaciones.Text != null && boxResponsable.Text != null && boxSucursal.Text != null)
+                if (txtDependencia.Text != "" && txtObservaciones.Text != "" && boxResponsable.Text != "" && boxSucursal.Text != "")
                 {
                     formInterfaz.AgregarIncidencia(txtObservaciones.Text, txtDependencia.Text, boxSucursal.Text, boxResponsable.Text);
                     formInterfaz.GuardarIncidencias();
@@ -69,14 +86,7 @@ namespace IncidenciasProyect
                     foreach (var item in nuevaListaProblema)
                     {
 
-                        int n = grilla.Rows.Add();
-
-                        grilla.Rows[n].Cells[0].Value = item.cod;
-                        grilla.Rows[n].Cells[1].Value = item.FechaHoy;
-                        grilla.Rows[n].Cells[2].Value = item.dependencia;
-                        grilla.Rows[n].Cells[3].Value = item.sucursarl;
-                        grilla.Rows[n].Cells[4].Value = item.responsable;
-                        grilla.Rows[n].Cells[5].Value = item.observacion;
+                        CargarGrilla(item);
 
                     }
 
@@ -94,6 +104,10 @@ namespace IncidenciasProyect
                     btnGenerar.Enabled = true;
 
                 }
+                else
+                {
+                    MessageBox.Show("Uno o mas campos no se encuentran ingresados", "Error de datos");
+                }
             }
         }
 
@@ -102,31 +116,252 @@ namespace IncidenciasProyect
             IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
             if (formInterfaz != null)
             {
+                txtDependencia.Text = "";
+                txtObservaciones.Text = "";
+                boxResponsable.Text = "";
+                boxSucursal.Text = "";
+                lblCodigo.Text = "-";
+                lblestado.Text = "-";
                 lblCodigo.Text = formInterfaz.DevolverCod().ToString();
                 txtDependencia.Enabled = true;
                 txtObservaciones.Enabled = true;
                 boxResponsable.Enabled = true;
                 boxSucursal.Enabled = true;
                 btnGenerar.Enabled = false;
-                btnAgregar.Enabled = true;
+                btnAgregar.Enabled = true;                            
             }
         }
 
         private void grilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {          
-            var row = grilla.Rows[e.RowIndex];
-            
-            IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
-            if (formInterfaz != null)
-            {
-                Problema problemaSeleccionado = row.DataBoundItem as Problema;
+        {
+            btnHabilitarModificacion.Enabled = true;
+            var row = grilla.Rows[e.RowIndex];          
+            btnCambiarEstado.Enabled = true;
+           
 
-                lblCodigo.Text = problemaSeleccionado.cod.ToString();
-                txtDependencia.Text = problemaSeleccionado.dependencia;
-                txtObservaciones.Text = problemaSeleccionado.observacion;
-                boxResponsable.Text = problemaSeleccionado.responsable;
-                boxSucursal.Text = problemaSeleccionado.sucursarl;
+                IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                if (formInterfaz != null)
+                {
+                    
+                    Problema problemaSeleccionado = row.DataBoundItem as Problema;
+
+                    int indice = grilla.CurrentCell.RowIndex;
+
+                    lblCodigo.Text = (string)grilla.Rows[indice].Cells[0].Value.ToString();
+                    txtDependencia.Text = (string)grilla.Rows[indice].Cells[2].Value; ;
+                    txtObservaciones.Text = (string)grilla.Rows[indice].Cells[5].Value; ;
+                    boxResponsable.Text = (string)grilla.Rows[indice].Cells[4].Value; ;
+                    boxSucursal.Text = (string)grilla.Rows[indice].Cells[3].Value;
+                    lblestado.Text = (string)grilla.Rows[indice].Cells[6].Value;
+
+                }
+            
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void grilla_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            var row = grilla.Rows[e.RowIndex];
+            var column = grilla.Columns[e.ColumnIndex];
+            List<Problema> nuevaListaProblemas = new List<Problema>();
+
+
+            if (column.Name == "Eliminar")
+            {
+                var mensaje = MessageBox.Show("Está seguro que desea eliminar la incidencia?", "Eliminar jugador", MessageBoxButtons.OKCancel);
+
+                if (mensaje == DialogResult.OK)
+                {
+                    IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                    if (formInterfaz != null)
+                    {
+                        Problema JugadorSeleccionado = row.DataBoundItem as Problema;
+
+                        int indice = grilla.CurrentCell.RowIndex;
+
+                        int cod = (int)grilla.Rows[indice].Cells[0].Value;
+
+                        formInterfaz.EliminarIncidencia(cod);
+
+                        formInterfaz.GuardarIncidencias();
+
+                        grilla.Rows.Clear();
+
+                        nuevaListaProblemas = formInterfaz.ObtenerProblemas();
+
+                        foreach (var item in nuevaListaProblemas)
+                        {
+
+                            CargarGrilla(item);
+
+                        }
+
+                    }
+
+                    txtDependencia.Enabled = false;
+                    txtObservaciones.Enabled = false;
+                    boxResponsable.Enabled = false;
+                    boxSucursal.Enabled = false;
+                    btnModificar.Enabled = false;
+                    btnAgregar.Enabled = false;
+                    txtDependencia.Text = "";
+                    txtObservaciones.Text = "";
+                    boxResponsable.Text = "";
+                    boxSucursal.Text = "";
+                    lblCodigo.Text = "-";
+                    lblestado.Text = "-";
+                    btnGenerar.Enabled = true;
+                }
             }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (lblestado.Text == "PENDIENTE")
+            {
+                lblestado.Text = "REPARADO";
+            }
+            else
+            {
+                lblestado.Text = "PENDIENTE";
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            List<Problema> nuevaListaProblema = new List<Problema>();
+            txtDependencia.Enabled = true;
+            txtObservaciones.Enabled = true;
+            boxResponsable.Enabled = true;
+            boxSucursal.Enabled = true;
+            btnGenerar.Enabled = false;
+
+            if (txtDependencia.Text != "" && txtObservaciones.Text != "" && boxResponsable.Text != "" && boxSucursal.Text != "")
+            {
+
+                IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                if (formInterfaz != null)
+                {
+
+                    int cod = Int32.Parse(lblCodigo.Text);
+
+                    formInterfaz.ModificarIncidencia(cod, txtObservaciones.Text, txtDependencia.Text, boxSucursal.Text, lblestado.Text, boxResponsable.Text);
+
+                    formInterfaz.GuardarIncidencias();
+
+                    nuevaListaProblema = formInterfaz.ObtenerProblemas();
+
+                    grilla.Rows.Clear();
+
+                    foreach (var item in nuevaListaProblema)
+                    {
+
+                        CargarGrilla(item);
+
+                    }
+                }
+
+                txtDependencia.Enabled = false;
+                txtObservaciones.Enabled = false;
+                boxResponsable.Enabled = false;
+                boxSucursal.Enabled = false;
+                btnModificar.Enabled = false;
+                btnAgregar.Enabled = false;
+                txtDependencia.Text = "";
+                txtObservaciones.Text = "";
+                boxResponsable.Text = "";
+                boxSucursal.Text = "";
+                lblCodigo.Text = "-";
+                lblestado.Text = "-";
+                btnGenerar.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Uno o mas campos no se encuentran ingresados", "Error de datos");
+            }
+
+            btnCambiarEstado.Enabled = false;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            btnHabilitarModificacion.Enabled = false;
+            btnModificar.Enabled = true;
+            txtDependencia.Enabled = true;
+            txtObservaciones.Enabled = true;
+            boxResponsable.Enabled = true;
+            boxSucursal.Enabled = true;
+        }
+
+        private void calendario_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            string fecha = calendario.SelectionStart.ToString("dd/MM/yyyy");
+                  
+            txtFecha.Text = fecha;
+                     
+        }
+
+        private void checkBoxResponsable_CheckedChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void checkBoxSucursal_CheckedChanged(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void checkBoxEstado_CheckedChanged(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void chboxFecha_CheckedChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void boxFiltroResp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkBoxResponsable.Checked == true && checkBoxResponsable.Text != "")
+            {
+                List<Problema> listaFiltrada = new List<Problema>();
+
+
+            }
+           
+        }
+
+        private void txtFecha_TextChanged(object sender, EventArgs e)
+        {
+            if (chboxFecha.Checked == true && txtFecha.Text != "")
+            {
+
+            }
+          
+        }
+
+        private void boxFiltroSucursal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkBoxSucursal.Checked == true && checkBoxSucursal.Text != "")
+            {
+
+            }
+           
+        }
+
+        private void boxFiltroEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkBoxEstado.Checked == true && checkBoxEstado.Text != "")
+            {
+
+            }
+           
         }
     }
 }

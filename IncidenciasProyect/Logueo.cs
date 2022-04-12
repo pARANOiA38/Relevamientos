@@ -36,13 +36,7 @@ namespace IncidenciasProyect
 
             nuevaClasePrincipal.LeerArchivosTXT();
 
-            Usuario nuevouser = new Usuario();
-
-            nuevouser.user = "javier";
-            nuevouser.pass = "comini";
-
-            nuevaClasePrincipal.Usuarios.Add(nuevouser);
-
+          
             nuevaClasePrincipal.GuardarUsuarios();
         }
 
@@ -129,6 +123,14 @@ namespace IncidenciasProyect
             Incidencia nuevoIncidencia = new Incidencia();
             nuevoIncidencia.Owner = this;
             nuevoIncidencia.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtContraseña.Enabled = true;
+            txtUsuario.Enabled = true;
+            btnIncidencias.Visible = false;
+            btnEntrar.Enabled = true;
         }
     }
 }

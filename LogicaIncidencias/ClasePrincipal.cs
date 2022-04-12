@@ -55,8 +55,7 @@ namespace LogicaIncidencias
                     item.dependencia = dependencia;
                     item.observacion = observacion;
                     item.sucursarl = sucursal;
-                    item.estado = estado;
-                    item.FechaHoy = DateTime.Now.ToString("dd/MM/yyyy");
+                    item.estado = estado;                   
                     item.responsable = responsable;
 
                     break;
@@ -99,9 +98,7 @@ namespace LogicaIncidencias
                 }
             }
             return aceptacion;
-        }
-
-
+        }      
 
         public void GenerarArchivosTXT()
         {
@@ -109,13 +106,13 @@ namespace LogicaIncidencias
             {
                 string path = @"c:\ArchivosTXT";
                 DirectoryInfo di = Directory.CreateDirectory(path);
-                using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Problemas.txt", false)) ;
+                using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Problemas.txt", false));
             }
             if (!File.Exists(@"c:\ArchivosTXT\Usuarios.txt"))
             {
                 string path = @"c:\ArchivosTXT";
                 DirectoryInfo di = Directory.CreateDirectory(path);
-                using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Usuarios.txt", false)) ;
+                using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Usuarios.txt", false));
             }
         }
 

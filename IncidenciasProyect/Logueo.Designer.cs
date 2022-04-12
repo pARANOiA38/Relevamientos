@@ -37,6 +37,7 @@ namespace IncidenciasProyect
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnIncidencias = new System.Windows.Forms.Button();
+            this.btnDesloguearse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEntrar
@@ -111,12 +112,23 @@ namespace IncidenciasProyect
             this.btnIncidencias.UseVisualStyleBackColor = true;
             this.btnIncidencias.Click += new System.EventHandler(this.btnIncidencias_Click);
             // 
+            // btnDesloguearse
+            // 
+            this.btnDesloguearse.Location = new System.Drawing.Point(12, 336);
+            this.btnDesloguearse.Name = "btnDesloguearse";
+            this.btnDesloguearse.Size = new System.Drawing.Size(83, 23);
+            this.btnDesloguearse.TabIndex = 8;
+            this.btnDesloguearse.Text = "Desloguearse";
+            this.btnDesloguearse.UseVisualStyleBackColor = true;
+            this.btnDesloguearse.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Logueo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(400, 371);
+            this.Controls.Add(this.btnDesloguearse);
             this.Controls.Add(this.btnIncidencias);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtContraseña);
@@ -145,5 +157,6 @@ namespace IncidenciasProyect
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnIncidencias;
+        private System.Windows.Forms.Button btnDesloguearse;
     }
 }

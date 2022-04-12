@@ -24,7 +24,6 @@ C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\
 C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.exe
 C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.pdb
 C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.Incidencia.resources
-C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.Menu.resources
 C:\Users\emmas\Desktop\Relevamientos\IncidenciasProyect\bin\Debug\IncidenciasProyect.exe.config
 C:\Users\emmas\Desktop\Relevamientos\IncidenciasProyect\bin\Debug\IncidenciasProyect.exe
 C:\Users\emmas\Desktop\Relevamientos\IncidenciasProyect\bin\Debug\IncidenciasProyect.pdb
