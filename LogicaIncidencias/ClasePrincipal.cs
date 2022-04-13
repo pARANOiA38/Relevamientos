@@ -10,6 +10,9 @@ namespace LogicaIncidencias
 {
     public class ClasePrincipal
     {
+        const string RutaPruebaArchivos = @"C:\ArchivosTXT";
+        const string RutaPruebaUsuarios = @"C:\ArchivosTXT\Usuarios.txt";
+        const string RutaPruebaProblemas = @"C:\ArchivosTXT\Problemas.txt";
         public  List<Usuario> Usuarios { get; set; }
         public List<Problema> Problemas { get; set; }
 
@@ -102,17 +105,17 @@ namespace LogicaIncidencias
 
         public void GenerarArchivosTXT()
         {
-            if (!File.Exists(@"G:\Mi unidad\BaseDeDatosIncidencia\Problemas.txt"))
+            if (!File.Exists(RutaPruebaProblemas))
             {
-                string path = @"G:\Mi unidad\BaseDeDatosIncidencia";
+                string path = RutaPruebaArchivos;
                 DirectoryInfo di = Directory.CreateDirectory(path);
-                using (StreamWriter write = new StreamWriter(@"G:\Mi unidad\BaseDeDatosIncidencia\Problemas.txt", false));
+                using (StreamWriter write = new StreamWriter(RutaPruebaProblemas, false));
             }
-            if (!File.Exists(@"G:\Mi unidad\BaseDeDatosIncidencia\Usuarios.txt"))
+            if (!File.Exists(RutaPruebaUsuarios))
             {
-                string path = @"G:\Mi unidad\BaseDeDatosIncidencia";
+                string path = RutaPruebaArchivos;
                 DirectoryInfo di = Directory.CreateDirectory(path);
-                using (StreamWriter write = new StreamWriter(@"G:\Mi unidad\BaseDeDatosIncidencia\Usuarios.txt", false));
+                using (StreamWriter write = new StreamWriter(RutaPruebaUsuarios, false));
             }
         }
 
@@ -120,7 +123,7 @@ namespace LogicaIncidencias
         {
             List<Usuario> ListaUsuario = new List<Usuario>();
 
-            using (StreamReader reader = new StreamReader(@"G:\Mi unidad\BaseDeDatosIncidencia\Usuarios.txt"))
+            using (StreamReader reader = new StreamReader(RutaPruebaUsuarios))
             {
                 string contenido = reader.ReadToEnd();
                 ListaUsuario = JsonConvert.DeserializeObject<List<Usuario>>(contenido);
@@ -136,7 +139,7 @@ namespace LogicaIncidencias
 
             List<Problema> ListaIncidencias = new List<Problema>();
 
-            using (StreamReader reader = new StreamReader(@"G:\Mi unidad\BaseDeDatosIncidencia\Problemas.txt"))
+            using (StreamReader reader = new StreamReader(RutaPruebaProblemas))
             {
                 string contenido = reader.ReadToEnd();
                 ListaIncidencias = JsonConvert.DeserializeObject<List<Problema>>(contenido);
@@ -156,7 +159,7 @@ namespace LogicaIncidencias
         {
             List<Problema> listIncidencias = Problemas;
 
-            using (StreamWriter write = new StreamWriter(@"G:\Mi unidad\BaseDeDatosIncidencia\Problemas.txt", false))
+            using (StreamWriter write = new StreamWriter(RutaPruebaProblemas, false))
             {
                 string jsonguardarIncidencias = JsonConvert.SerializeObject(listIncidencias);
                 write.WriteLine(jsonguardarIncidencias);
@@ -168,7 +171,7 @@ namespace LogicaIncidencias
         {
             List<Usuario> listUsuarios = Usuarios;
 
-            using (StreamWriter write = new StreamWriter(@"G:\Mi unidad\BaseDeDatosIncidencia\Usuarios.txt", false))
+            using (StreamWriter write = new StreamWriter(RutaPruebaUsuarios, false))
             {
                 string jsonguardarUsuarios = JsonConvert.SerializeObject(listUsuarios);
                 write.WriteLine(jsonguardarUsuarios);
