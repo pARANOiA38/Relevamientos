@@ -108,7 +108,7 @@ namespace IncidenciasProyect
         private void btnIncidencias_Click(object sender, EventArgs e)
         {
             Incidencia nuevoIncidencia = new Incidencia();
-            //nuevoIncidencia.Owner = this;
+            nuevoIncidencia.Owner = this;
             //nuevoIncidencia.ShowDialog();
 
             nuevoIncidencia.Show();
