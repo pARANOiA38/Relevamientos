@@ -25,7 +25,7 @@ namespace IncidenciasProyect
             grilla.Rows[n].Cells[0].Value = item.cod;
             grilla.Rows[n].Cells[1].Value = item.FechaHoy;
             grilla.Rows[n].Cells[2].Value = item.dependencia;
-            grilla.Rows[n].Cells[3].Value = item.sucursarl;
+            grilla.Rows[n].Cells[3].Value = item.sucursal;
             grilla.Rows[n].Cells[4].Value = item.responsable;
             grilla.Rows[n].Cells[5].Value = item.observacion;
             grilla.Rows[n].Cells[6].Value = item.estado;
@@ -308,60 +308,399 @@ namespace IncidenciasProyect
 
         private void checkBoxResponsable_CheckedChanged(object sender, EventArgs e)
         {
-         
+            
+            if (checkBoxResponsable.Checked == true && boxFiltroResp.Text != "")
+            {
+                grilla.Rows.Clear();
+
+                checkBoxEstado.Enabled = false;
+                chboxFecha.Enabled = false;
+                checkBoxSucursal.Enabled = false;
+
+                IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                if (formInterfaz != null)
+                {
+                    List<Problema> listFiltrada = formInterfaz.ObtenerProblemas();
+
+                    foreach (var item in listFiltrada)
+                    {
+                        if (item.responsable == boxFiltroResp.Text)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (checkBoxResponsable.Checked == false)
+                {
+                    boxFiltroResp.Text = "";
+                    grilla.Rows.Clear();
+
+                    IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                    if (formInterfaz != null)
+                    {
+                        List<Problema> listNormal = formInterfaz.ObtenerProblemas();
+
+                        foreach (var item in listNormal)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+
+                    checkBoxEstado.Enabled = true;
+                    chboxFecha.Enabled = true;
+                    checkBoxSucursal.Enabled = true;
+                }
+
+            }
         }
 
         private void checkBoxSucursal_CheckedChanged(object sender, EventArgs e)
         {
-       
+           
+
+            if (checkBoxSucursal.Checked == true && boxFiltroSucursal.Text != "")
+            {
+
+                grilla.Rows.Clear();
+                checkBoxEstado.Enabled = false;
+                chboxFecha.Enabled = false;
+                checkBoxResponsable.Enabled = false;
+
+                IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                if (formInterfaz != null)
+                {
+                    List<Problema> listFiltrada = formInterfaz.ObtenerProblemas();
+
+                    foreach (var item in listFiltrada)
+                    {
+                        if (item.sucursal == boxFiltroSucursal.Text)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (checkBoxSucursal.Checked == false)
+                {
+                    boxFiltroSucursal.Text = "";
+                    grilla.Rows.Clear();
+
+                    IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                    if (formInterfaz != null)
+                    {
+                        List<Problema> listNormal = formInterfaz.ObtenerProblemas();
+
+                        foreach (var item in listNormal)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+
+                    checkBoxEstado.Enabled = true;
+                    chboxFecha.Enabled = true;
+                    checkBoxResponsable.Enabled = true;
+                }
+            }
         }
 
         private void checkBoxEstado_CheckedChanged(object sender, EventArgs e)
-        {
-       
+        {         
+            if (checkBoxEstado.Checked == true && boxFiltroEstado.Text != "")
+            {
+                grilla.Rows.Clear();
+
+                checkBoxSucursal.Enabled = false;
+                chboxFecha.Enabled = false;
+                checkBoxResponsable.Enabled = false;
+
+                IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                if (formInterfaz != null)
+                {
+                    List<Problema> listFiltrada = formInterfaz.ObtenerProblemas();
+
+                    foreach (var item in listFiltrada)
+                    {
+                        if (item.estado == boxFiltroEstado.Text)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (checkBoxEstado.Checked == false)
+                {
+                    boxFiltroEstado.Text = "";
+                    grilla.Rows.Clear();
+
+                    IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                    if (formInterfaz != null)
+                    {
+                        List<Problema> listNormal = formInterfaz.ObtenerProblemas();
+
+                        foreach (var item in listNormal)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+
+                    checkBoxSucursal.Enabled = true;
+                    chboxFecha.Enabled = true;
+                    checkBoxResponsable.Enabled = true;
+                }
+            }
         }
 
         private void chboxFecha_CheckedChanged(object sender, EventArgs e)
-        {
-          
+        {           
+            if (chboxFecha.Checked == true && txtFecha.Text != "")
+            {
+                grilla.Rows.Clear();
+
+                checkBoxSucursal.Enabled = false;
+                checkBoxEstado.Enabled = false;
+                checkBoxResponsable.Enabled = false;
+
+                IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                if (formInterfaz != null)
+                {
+                    List<Problema> listFiltrada = formInterfaz.ObtenerProblemas();
+
+                    foreach (var item in listFiltrada)
+                    {
+                        if (item.FechaHoy == txtFecha.Text)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (chboxFecha.Checked == false)
+                {
+                    txtFecha.Text = "";
+                    grilla.Rows.Clear();
+
+                    IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                    if (formInterfaz != null)
+                    {
+                        List<Problema> listNormal = formInterfaz.ObtenerProblemas();
+
+                        foreach (var item in listNormal)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+
+                    checkBoxSucursal.Enabled = true;
+                    checkBoxEstado.Enabled = true;
+                    checkBoxResponsable.Enabled = true;
+                }
+            }
         }
 
         private void boxFiltroResp_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (checkBoxResponsable.Checked == true && checkBoxResponsable.Text != "")
+            if (checkBoxResponsable.Checked == true && boxFiltroResp.Text != "")
             {
-                List<Problema> listaFiltrada = new List<Problema>();
+                grilla.Rows.Clear();
 
+                checkBoxEstado.Enabled = false;
+                chboxFecha.Enabled = false;
+                checkBoxSucursal.Enabled = false;
+
+                IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                if (formInterfaz != null)
+                {
+                    List<Problema> listFiltrada = formInterfaz.ObtenerProblemas();
+
+                    foreach (var item in listFiltrada)
+                    {
+                        if (item.responsable == boxFiltroResp.Text)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (checkBoxResponsable.Checked == false)
+                {
+                    grilla.Rows.Clear();
+
+                    IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                    if (formInterfaz != null)
+                    {
+                        List<Problema> listNormal = formInterfaz.ObtenerProblemas();
+
+                        foreach (var item in listNormal)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+
+                    checkBoxEstado.Enabled = true;
+                    chboxFecha.Enabled = true;
+                    checkBoxSucursal.Enabled = true;
+                }
 
             }
-           
+
         }
 
         private void txtFecha_TextChanged(object sender, EventArgs e)
         {
             if (chboxFecha.Checked == true && txtFecha.Text != "")
             {
+                grilla.Rows.Clear();
 
+                checkBoxSucursal.Enabled = false;
+                checkBoxEstado.Enabled = false;
+                checkBoxResponsable.Enabled = false;
+
+                IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                if (formInterfaz != null)
+                {
+                    List<Problema> listFiltrada = formInterfaz.ObtenerProblemas();
+
+                    foreach (var item in listFiltrada)
+                    {
+                        if (item.FechaHoy == txtFecha.Text)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+                }
             }
-          
+            else
+            {
+                if (chboxFecha.Checked == false)
+                {
+                    grilla.Rows.Clear();
+
+                    IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                    if (formInterfaz != null)
+                    {
+                        List<Problema> listNormal = formInterfaz.ObtenerProblemas();
+
+                        foreach (var item in listNormal)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+
+                    checkBoxSucursal.Enabled = true;
+                    checkBoxEstado.Enabled = true;
+                    checkBoxResponsable.Enabled = true;
+                }
+            }
+
         }
 
         private void boxFiltroSucursal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (checkBoxSucursal.Checked == true && checkBoxSucursal.Text != "")
+            if (checkBoxSucursal.Checked == true && boxFiltroSucursal.Text != "")
             {
 
+                grilla.Rows.Clear();
+                checkBoxEstado.Enabled = false;
+                chboxFecha.Enabled = false;
+                checkBoxResponsable.Enabled = false;
+
+                IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                if (formInterfaz != null)
+                {
+                    List<Problema> listFiltrada = formInterfaz.ObtenerProblemas();
+
+                    foreach (var item in listFiltrada)
+                    {
+                        if (item.sucursal == boxFiltroSucursal.Text)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+                }
             }
-           
+            else
+            {
+                if (checkBoxSucursal.Checked == false)
+                {
+                    grilla.Rows.Clear();
+
+                    IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                    if (formInterfaz != null)
+                    {
+                        List<Problema> listNormal = formInterfaz.ObtenerProblemas();
+
+                        foreach (var item in listNormal)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+
+                    checkBoxEstado.Enabled = true;
+                    chboxFecha.Enabled = true;
+                    checkBoxResponsable.Enabled = true;
+                }
+            }
+
         }
 
         private void boxFiltroEstado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (checkBoxEstado.Checked == true && checkBoxEstado.Text != "")
+        {           
+            if (checkBoxEstado.Checked == true && boxFiltroEstado.Text != "")
             {
+                grilla.Rows.Clear();
 
+                checkBoxSucursal.Enabled = false;
+                chboxFecha.Enabled = false;
+                checkBoxResponsable.Enabled = false;
+
+                IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                if (formInterfaz != null)
+                {
+                    List<Problema> listFiltrada = formInterfaz.ObtenerProblemas();
+
+                    foreach (var item in listFiltrada)
+                    {
+                        if (item.estado == boxFiltroEstado.Text)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+                }
             }
-           
+            else
+            {
+                if (checkBoxEstado.Checked == false)
+                {
+                    grilla.Rows.Clear();
+
+                    IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                    if (formInterfaz != null)
+                    {
+                        List<Problema> listNormal = formInterfaz.ObtenerProblemas();
+
+                        foreach (var item in listNormal)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+
+                    checkBoxSucursal.Enabled = true;
+                    chboxFecha.Enabled = true;
+                    checkBoxResponsable.Enabled = true;
+                }
+            }
+
         }
     }
 }

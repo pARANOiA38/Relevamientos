@@ -36,7 +36,29 @@ namespace IncidenciasProyect
 
             nuevaClasePrincipal.LeerArchivosTXT();
 
-          
+            if (nuevaClasePrincipal.Usuarios.Count == 0)
+            {
+                Usuario UsuarioNew1 = new Usuario();
+                
+                UsuarioNew1.pass = "35528";
+                UsuarioNew1.user = "emmanuel";
+
+                nuevaClasePrincipal.Usuarios.Add(UsuarioNew1);
+
+                Usuario UsuarioNew2 = new Usuario();
+
+                UsuarioNew2.pass = "35528";
+                UsuarioNew2.user = "javier";
+
+                nuevaClasePrincipal.Usuarios.Add(UsuarioNew2);
+
+                Usuario UsuarioNew3 = new Usuario();
+
+                UsuarioNew3.pass = "35528";
+                UsuarioNew3.user = "alejandro";
+
+                nuevaClasePrincipal.Usuarios.Add(UsuarioNew3);
+            }                  
             nuevaClasePrincipal.GuardarUsuarios();
         }
 

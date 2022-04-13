@@ -29,7 +29,7 @@ namespace IncidenciasProyect
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grilla = new System.Windows.Forms.DataGridView();
             this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -131,9 +131,9 @@ namespace IncidenciasProyect
             // 
             // Column5
             // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column5.HeaderText = "ESTADO";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -208,8 +208,11 @@ namespace IncidenciasProyect
             // boxFiltroResp
             // 
             this.boxFiltroResp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.boxFiltroResp.Enabled = false;
             this.boxFiltroResp.FormattingEnabled = true;
+            this.boxFiltroResp.Items.AddRange(new object[] {
+            "JAVIER",
+            "EMMANUEL",
+            "ALEJANDRO"});
             this.boxFiltroResp.Location = new System.Drawing.Point(131, 295);
             this.boxFiltroResp.Name = "boxFiltroResp";
             this.boxFiltroResp.Size = new System.Drawing.Size(121, 21);
@@ -219,8 +222,20 @@ namespace IncidenciasProyect
             // boxFiltroSucursal
             // 
             this.boxFiltroSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.boxFiltroSucursal.Enabled = false;
             this.boxFiltroSucursal.FormattingEnabled = true;
+            this.boxFiltroSucursal.Items.AddRange(new object[] {
+            "PINGUINO 1",
+            "PINGUINO 2",
+            "PINGUINO 3",
+            "PINGUINO 4",
+            "PINGUINO 5",
+            "PINGUINO 6",
+            "PINGUINO 7",
+            "PINGUINO 8",
+            "PINGUINO 9",
+            "ADM. CENTRAL",
+            "C. PRODUCCION",
+            "C. DISTRIBUCION"});
             this.boxFiltroSucursal.Location = new System.Drawing.Point(131, 340);
             this.boxFiltroSucursal.Name = "boxFiltroSucursal";
             this.boxFiltroSucursal.Size = new System.Drawing.Size(121, 21);
@@ -230,7 +245,6 @@ namespace IncidenciasProyect
             // boxFiltroEstado
             // 
             this.boxFiltroEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.boxFiltroEstado.Enabled = false;
             this.boxFiltroEstado.FormattingEnabled = true;
             this.boxFiltroEstado.Items.AddRange(new object[] {
             "PENDIENTE",

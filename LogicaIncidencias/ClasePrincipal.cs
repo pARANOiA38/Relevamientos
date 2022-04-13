@@ -20,7 +20,7 @@ namespace LogicaIncidencias
             newIncidencia.cod = DevolverCod();
             newIncidencia.dependencia = dependencia;
             newIncidencia.observacion = observacion;
-            newIncidencia.sucursarl = sucursal;
+            newIncidencia.sucursal = sucursal;
             newIncidencia.FechaHoy = DateTime.Now.ToString("dd/MM/yyyy");
             newIncidencia.estado = "PENDIENTE";
             newIncidencia.responsable = responsable;
@@ -54,7 +54,7 @@ namespace LogicaIncidencias
                 {
                     item.dependencia = dependencia;
                     item.observacion = observacion;
-                    item.sucursarl = sucursal;
+                    item.sucursal = sucursal;
                     item.estado = estado;                   
                     item.responsable = responsable;
 
@@ -102,17 +102,17 @@ namespace LogicaIncidencias
 
         public void GenerarArchivosTXT()
         {
-            if (!File.Exists(@"c:\ArchivosTXT\Problemas.txt"))
+            if (!File.Exists(@"G:\Mi unidad\BaseDeDatosIncidencia\Problemas.txt"))
             {
-                string path = @"c:\ArchivosTXT";
+                string path = @"G:\Mi unidad\BaseDeDatosIncidencia";
                 DirectoryInfo di = Directory.CreateDirectory(path);
-                using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Problemas.txt", false));
+                using (StreamWriter write = new StreamWriter(@"G:\Mi unidad\BaseDeDatosIncidencia\Problemas.txt", false));
             }
-            if (!File.Exists(@"c:\ArchivosTXT\Usuarios.txt"))
+            if (!File.Exists(@"G:\Mi unidad\BaseDeDatosIncidencia\Usuarios.txt"))
             {
-                string path = @"c:\ArchivosTXT";
+                string path = @"G:\Mi unidad\BaseDeDatosIncidencia";
                 DirectoryInfo di = Directory.CreateDirectory(path);
-                using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Usuarios.txt", false));
+                using (StreamWriter write = new StreamWriter(@"G:\Mi unidad\BaseDeDatosIncidencia\Usuarios.txt", false));
             }
         }
 
@@ -120,7 +120,7 @@ namespace LogicaIncidencias
         {
             List<Usuario> ListaUsuario = new List<Usuario>();
 
-            using (StreamReader reader = new StreamReader(@"c:\ArchivosTXT\Usuarios.txt"))
+            using (StreamReader reader = new StreamReader(@"G:\Mi unidad\BaseDeDatosIncidencia\Usuarios.txt"))
             {
                 string contenido = reader.ReadToEnd();
                 ListaUsuario = JsonConvert.DeserializeObject<List<Usuario>>(contenido);
@@ -136,7 +136,7 @@ namespace LogicaIncidencias
 
             List<Problema> ListaIncidencias = new List<Problema>();
 
-            using (StreamReader reader = new StreamReader(@"c:\ArchivosTXT\Problemas.txt"))
+            using (StreamReader reader = new StreamReader(@"G:\Mi unidad\BaseDeDatosIncidencia\Problemas.txt"))
             {
                 string contenido = reader.ReadToEnd();
                 ListaIncidencias = JsonConvert.DeserializeObject<List<Problema>>(contenido);
@@ -156,7 +156,7 @@ namespace LogicaIncidencias
         {
             List<Problema> listIncidencias = Problemas;
 
-            using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Problemas.txt", false))
+            using (StreamWriter write = new StreamWriter(@"G:\Mi unidad\BaseDeDatosIncidencia\Problemas.txt", false))
             {
                 string jsonguardarIncidencias = JsonConvert.SerializeObject(listIncidencias);
                 write.WriteLine(jsonguardarIncidencias);
@@ -168,7 +168,7 @@ namespace LogicaIncidencias
         {
             List<Usuario> listUsuarios = Usuarios;
 
-            using (StreamWriter write = new StreamWriter(@"c:\ArchivosTXT\Usuarios.txt", false))
+            using (StreamWriter write = new StreamWriter(@"G:\Mi unidad\BaseDeDatosIncidencia\Usuarios.txt", false))
             {
                 string jsonguardarUsuarios = JsonConvert.SerializeObject(listUsuarios);
                 write.WriteLine(jsonguardarUsuarios);
