@@ -40,6 +40,7 @@ C:\Users\emmas\Desktop\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasPro
 C:\Users\emmas\Desktop\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.csproj.CopyComplete
 C:\Users\emmas\Desktop\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.exe
 C:\Users\emmas\Desktop\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.pdb
+<<<<<<< HEAD
 C:\Users\emmas\Desktop\Repositorios\Relevamientos\IncidenciasProyect\bin\Debug\IncidenciasProyect.exe.config
 C:\Users\emmas\Desktop\Repositorios\Relevamientos\IncidenciasProyect\bin\Debug\IncidenciasProyect.exe
 C:\Users\emmas\Desktop\Repositorios\Relevamientos\IncidenciasProyect\bin\Debug\IncidenciasProyect.pdb
@@ -56,3 +57,9 @@ C:\Users\emmas\Desktop\Repositorios\Relevamientos\IncidenciasProyect\obj\Debug\I
 C:\Users\emmas\Desktop\Repositorios\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.csproj.CopyComplete
 C:\Users\emmas\Desktop\Repositorios\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.exe
 C:\Users\emmas\Desktop\Repositorios\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.pdb
+=======
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\bin\Debug\IncidenciasProyect.exe.manifest
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\bin\Debug\IncidenciasProyect.application
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.exe.manifest
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.application
+>>>>>>> 3507ae6272cb8cd9d898889ab46dcfb6c04f46a7

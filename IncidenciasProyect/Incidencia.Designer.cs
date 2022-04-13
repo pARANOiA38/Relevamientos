@@ -66,6 +66,7 @@ namespace IncidenciasProyect
             this.btnCambiarEstado = new System.Windows.Forms.Button();
             this.btnHabilitarModificacion = new System.Windows.Forms.Button();
             this.txtFecha = new System.Windows.Forms.TextBox();
+            this.txtCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grilla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -448,13 +449,28 @@ namespace IncidenciasProyect
             this.txtFecha.TabIndex = 29;
             this.txtFecha.TextChanged += new System.EventHandler(this.txtFecha_TextChanged);
             // 
+            // txtCancelar
+            // 
+            this.txtCancelar.Location = new System.Drawing.Point(577, 562);
+            this.txtCancelar.Name = "txtCancelar";
+            this.txtCancelar.Size = new System.Drawing.Size(98, 23);
+            this.txtCancelar.TabIndex = 30;
+            this.txtCancelar.Text = "CANCELAR ";
+            this.txtCancelar.UseVisualStyleBackColor = true;
+            this.txtCancelar.Click += new System.EventHandler(this.txtCancelar_Click);
+            // 
             // Incidencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1370, 605);
+=======
+            this.ClientSize = new System.Drawing.Size(1482, 605);
+            this.Controls.Add(this.txtCancelar);
+>>>>>>> 3507ae6272cb8cd9d898889ab46dcfb6c04f46a7
             this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.btnHabilitarModificacion);
             this.Controls.Add(this.btnCambiarEstado);
@@ -531,5 +547,6 @@ namespace IncidenciasProyect
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewLinkColumn Eliminar;
         private System.Windows.Forms.TextBox txtFecha;
+        private System.Windows.Forms.Button txtCancelar;
     }
 }
