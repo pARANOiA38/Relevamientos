@@ -64,42 +64,7 @@ namespace IncidenciasProyect
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (txtContraseña.Text == "" | txtUsuario.Text == "")
-            {
-
-                MessageBox.Show("Escriba un email y clave", "Error de usuario");
-
-            }
-            else
-            {
-
-                if (nuevaClasePrincipal.Usuarios == null)
-                {
-                    MessageBox.Show("No hay usuarios cargados en el sistema", "Error de usuario");
-                }
-                else
-                {
-
-                    string email = txtUsuario.Text;
-                    string clave = txtContraseña.Text;
-
-                    bool CondicionFinal = ValidarUsuario(email, clave);
-
-                    if (CondicionFinal == false)
-                    {
-                        MessageBox.Show("Usuario o contraseña incorrecta", "Error de credenciales");
-                    }
-                    else
-                    {
-                        btnIncidencias.Visible = true;
-                        txtContraseña.Enabled = false;
-                        txtUsuario.Enabled = false;
-                        txtContraseña.Text = "";
-                        txtUsuario.Text = "";
-                        btnEntrar.Enabled = false;
-                    }
-                }
-            }
+            EjecutarEntrar();
         }
 
         public void AgregarIncidencia(string observacion, string dependencia, string sucursal, string responsable)
@@ -143,8 +108,18 @@ namespace IncidenciasProyect
         private void btnIncidencias_Click(object sender, EventArgs e)
         {
             Incidencia nuevoIncidencia = new Incidencia();
-            nuevoIncidencia.Owner = this;
-            nuevoIncidencia.ShowDialog();
+            //nuevoIncidencia.Owner = this;
+            //nuevoIncidencia.ShowDialog();
+
+            nuevoIncidencia.Show();
+            nuevoIncidencia.FormClosed += LogOut;
+
+            this.Hide();
+        }
+
+        private void LogOut(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -153,6 +128,54 @@ namespace IncidenciasProyect
             txtUsuario.Enabled = true;
             btnIncidencias.Visible = false;
             btnEntrar.Enabled = true;
+        }
+
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                EjecutarEntrar();
+            }
+        }
+
+        private void EjecutarEntrar()
+        {
+            if (txtContraseña.Text == "" | txtUsuario.Text == "")
+            {
+
+                MessageBox.Show("Escriba un email y clave", "Error de usuario");
+
+            }
+            else
+            {
+
+                if (nuevaClasePrincipal.Usuarios == null)
+                {
+                    MessageBox.Show("No hay usuarios cargados en el sistema", "Error de usuario");
+                }
+                else
+                {
+
+                    string email = txtUsuario.Text;
+                    string clave = txtContraseña.Text;
+
+                    bool CondicionFinal = ValidarUsuario(email, clave);
+
+                    if (CondicionFinal == false)
+                    {
+                        MessageBox.Show("Usuario o contraseña incorrecta", "Error de credenciales");
+                    }
+                    else
+                    {
+                        btnIncidencias.Visible = true;
+                        txtContraseña.Enabled = false;
+                        txtUsuario.Enabled = false;
+                        txtContraseña.Text = "";
+                        txtUsuario.Text = "";
+                        btnEntrar.Enabled = false;
+                    }
+                }
+            }
         }
     }
 }

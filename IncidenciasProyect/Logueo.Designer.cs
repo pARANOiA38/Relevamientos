@@ -45,7 +45,7 @@ namespace IncidenciasProyect
             this.btnEntrar.Location = new System.Drawing.Point(166, 191);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 23);
-            this.btnEntrar.TabIndex = 0;
+            this.btnEntrar.TabIndex = 2;
             this.btnEntrar.Text = "ENTRAR";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -82,7 +82,7 @@ namespace IncidenciasProyect
             this.txtUsuario.Location = new System.Drawing.Point(155, 93);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
-            this.txtUsuario.TabIndex = 4;
+            this.txtUsuario.TabIndex = 0;
             // 
             // txtContraseña
             // 
@@ -90,14 +90,15 @@ namespace IncidenciasProyect
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(100, 20);
-            this.txtContraseña.TabIndex = 5;
+            this.txtContraseña.TabIndex = 1;
+            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(356, 336);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(32, 23);
-            this.btnSalir.TabIndex = 6;
+            this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.button2_Click);
@@ -107,7 +108,7 @@ namespace IncidenciasProyect
             this.btnIncidencias.Location = new System.Drawing.Point(159, 264);
             this.btnIncidencias.Name = "btnIncidencias";
             this.btnIncidencias.Size = new System.Drawing.Size(87, 23);
-            this.btnIncidencias.TabIndex = 7;
+            this.btnIncidencias.TabIndex = 3;
             this.btnIncidencias.Text = "INCIDENCIAS";
             this.btnIncidencias.UseVisualStyleBackColor = true;
             this.btnIncidencias.Click += new System.EventHandler(this.btnIncidencias_Click);
@@ -117,7 +118,7 @@ namespace IncidenciasProyect
             this.btnDesloguearse.Location = new System.Drawing.Point(12, 336);
             this.btnDesloguearse.Name = "btnDesloguearse";
             this.btnDesloguearse.Size = new System.Drawing.Size(83, 23);
-            this.btnDesloguearse.TabIndex = 8;
+            this.btnDesloguearse.TabIndex = 4;
             this.btnDesloguearse.Text = "Desloguearse";
             this.btnDesloguearse.UseVisualStyleBackColor = true;
             this.btnDesloguearse.Click += new System.EventHandler(this.button1_Click);

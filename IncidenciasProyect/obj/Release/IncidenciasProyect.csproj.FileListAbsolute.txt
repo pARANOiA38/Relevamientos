@@ -1,0 +1,16 @@
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\bin\Release\IncidenciasProyect.exe.config
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\bin\Release\IncidenciasProyect.exe
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\bin\Release\IncidenciasProyect.pdb
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\bin\Release\LogicaIncidencias.dll
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\bin\Release\Newtonsoft.Json.dll
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\bin\Release\LogicaIncidencias.pdb
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\bin\Release\Newtonsoft.Json.xml
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Release\IncidenciasProyect.csprojAssemblyReference.cache
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Release\IncidenciasProyect.Incidencia.resources
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Release\IncidenciasProyect.Logueo.resources
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Release\IncidenciasProyect.Properties.Resources.resources
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Release\IncidenciasProyect.csproj.GenerateResource.cache
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Release\IncidenciasProyect.csproj.CoreCompileInputs.cache
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Release\IncidenciasProyect.csproj.CopyComplete
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Release\IncidenciasProyect.exe
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Release\IncidenciasProyect.pdb
