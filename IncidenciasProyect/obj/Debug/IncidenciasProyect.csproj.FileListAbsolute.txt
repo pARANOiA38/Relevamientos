@@ -40,3 +40,7 @@ C:\Users\emmas\Desktop\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasPro
 C:\Users\emmas\Desktop\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.csproj.CopyComplete
 C:\Users\emmas\Desktop\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.exe
 C:\Users\emmas\Desktop\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.pdb
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\bin\Debug\IncidenciasProyect.exe.manifest
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\bin\Debug\IncidenciasProyect.application
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.exe.manifest
+C:\Users\Supervisor-PC\Desktop\RepoIncidencias\Relevamientos\IncidenciasProyect\obj\Debug\IncidenciasProyect.application

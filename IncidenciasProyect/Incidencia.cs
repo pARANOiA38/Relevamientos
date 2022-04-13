@@ -41,7 +41,8 @@ namespace IncidenciasProyect
             }
         }
         private void Incidencia_Load(object sender, EventArgs e)
-        {         
+        {
+            txtCancelar.Enabled = false;
             btnHabilitarModificacion.Enabled = false;
             txtDependencia.Enabled = false;
             txtObservaciones.Enabled = false;
@@ -109,10 +110,16 @@ namespace IncidenciasProyect
                     MessageBox.Show("Uno o mas campos no se encuentran ingresados", "Error de datos");
                 }
             }
+
+            grilla.Enabled = true;
+            txtCancelar.Enabled = false;
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
+            txtCancelar.Enabled = true;
+            grilla.Enabled = false;
+
             IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
             if (formInterfaz != null)
             {
@@ -701,6 +708,27 @@ namespace IncidenciasProyect
                 }
             }
 
+        }
+
+        private void txtCancelar_Click(object sender, EventArgs e)
+        {
+            grilla.Enabled = true;
+
+            txtDependencia.Enabled = false;
+            txtObservaciones.Enabled = false;
+            boxResponsable.Enabled = false;
+            boxSucursal.Enabled = false;
+            btnModificar.Enabled = false;
+            btnAgregar.Enabled = false;
+            txtDependencia.Text = "";
+            txtObservaciones.Text = "";
+            boxResponsable.Text = "";
+            boxSucursal.Text = "";
+            lblCodigo.Text = "-";
+            lblestado.Text = "-";
+            btnGenerar.Enabled = true;
+
+            txtCancelar.Enabled = false;
         }
     }
 }
