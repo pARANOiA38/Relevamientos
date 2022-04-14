@@ -29,7 +29,7 @@ namespace IncidenciasProyect
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grilla = new System.Windows.Forms.DataGridView();
             this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -132,9 +132,9 @@ namespace IncidenciasProyect
             // 
             // Column5
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column5.HeaderText = "ESTADO";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -463,9 +463,14 @@ namespace IncidenciasProyect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+<<<<<<< HEAD
+            this.ClientSize = new System.Drawing.Size(1370, 605);
+=======
             this.ClientSize = new System.Drawing.Size(1482, 605);
             this.Controls.Add(this.txtCancelar);
+>>>>>>> 3507ae6272cb8cd9d898889ab46dcfb6c04f46a7
             this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.btnHabilitarModificacion);
             this.Controls.Add(this.btnCambiarEstado);
