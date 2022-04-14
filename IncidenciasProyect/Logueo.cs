@@ -99,6 +99,10 @@ namespace IncidenciasProyect
         {
             nuevaClasePrincipal.GuardarIncidencias();
         }
+        public void ReordenarCodigo()
+        {
+            nuevaClasePrincipal.ReordenarCodigo();
+        }
 
         public List<Problema> ObtenerProblemas()
         {

@@ -18,6 +18,7 @@ namespace IncidenciasProyect
         void LeerArchivosTXT();
         void GuardarIncidencias();
         List<Problema> ObtenerProblemas();
+        void ReordenarCodigo();
 
     }
 }

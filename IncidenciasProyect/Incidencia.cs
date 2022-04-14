@@ -42,7 +42,7 @@ namespace IncidenciasProyect
         }
         private void Incidencia_Load(object sender, EventArgs e)
         {
-            txtCancelar.Enabled = false;
+            btnCancelar.Enabled = false;
             btnHabilitarModificacion.Enabled = false;
             txtDependencia.Enabled = false;
             txtObservaciones.Enabled = false;
@@ -112,17 +112,20 @@ namespace IncidenciasProyect
             }
 
             grilla.Enabled = true;
-            txtCancelar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnCambiarEstado.Enabled = false;
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            txtCancelar.Enabled = true;
+            btnCancelar.Enabled = true;
             grilla.Enabled = false;
 
             IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
             if (formInterfaz != null)
             {
+                formInterfaz.LeerArchivosTXT();
+
                 txtDependencia.Text = "";
                 txtObservaciones.Text = "";
                 boxResponsable.Text = "";
@@ -141,15 +144,16 @@ namespace IncidenciasProyect
 
         private void grilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnHabilitarModificacion.Enabled = true;
-            var row = grilla.Rows[e.RowIndex];          
-            btnCambiarEstado.Enabled = true;
-           
+            if (e.RowIndex != -1)
+            {
+                btnHabilitarModificacion.Enabled = true;
+                var row = grilla.Rows[e.RowIndex];
+
 
                 IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
                 if (formInterfaz != null)
                 {
-                    
+
                     Problema problemaSeleccionado = row.DataBoundItem as Problema;
 
                     int indice = grilla.CurrentCell.RowIndex;
@@ -162,7 +166,9 @@ namespace IncidenciasProyect
                     lblestado.Text = (string)grilla.Rows[indice].Cells[6].Value;
 
                 }
+            }
             
+          
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -172,56 +178,61 @@ namespace IncidenciasProyect
 
         private void grilla_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            var row = grilla.Rows[e.RowIndex];
-            var column = grilla.Columns[e.ColumnIndex];
-            List<Problema> nuevaListaProblemas = new List<Problema>();
-
-
-            if (column.Name == "Eliminar")
+            if (e.RowIndex != -1)
             {
-                var mensaje = MessageBox.Show("Está seguro que desea eliminar la incidencia?", "Eliminar jugador", MessageBoxButtons.OKCancel);
+                var row = grilla.Rows[e.RowIndex];
+                var column = grilla.Columns[e.ColumnIndex];
+                List<Problema> nuevaListaProblemas = new List<Problema>();
 
-                if (mensaje == DialogResult.OK)
+
+                if (column.Name == "Eliminar")
                 {
-                    IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
-                    if (formInterfaz != null)
+                    var mensaje = MessageBox.Show("Está seguro que desea eliminar la incidencia?", "Eliminar jugador", MessageBoxButtons.OKCancel);
+
+                    if (mensaje == DialogResult.OK)
                     {
-                        Problema JugadorSeleccionado = row.DataBoundItem as Problema;
-
-                        int indice = grilla.CurrentCell.RowIndex;
-
-                        int cod = (int)grilla.Rows[indice].Cells[0].Value;
-
-                        formInterfaz.EliminarIncidencia(cod);
-
-                        formInterfaz.GuardarIncidencias();
-
-                        grilla.Rows.Clear();
-
-                        nuevaListaProblemas = formInterfaz.ObtenerProblemas();
-
-                        foreach (var item in nuevaListaProblemas)
+                        IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                        if (formInterfaz != null)
                         {
+                            Problema JugadorSeleccionado = row.DataBoundItem as Problema;
 
-                            CargarGrilla(item);
+                            int indice = grilla.CurrentCell.RowIndex;
+
+                            int cod = (int)grilla.Rows[indice].Cells[0].Value;
+
+                            formInterfaz.EliminarIncidencia(cod);
+
+                            formInterfaz.ReordenarCodigo();
+
+                            formInterfaz.GuardarIncidencias();
+
+                            grilla.Rows.Clear();
+
+                            nuevaListaProblemas = formInterfaz.ObtenerProblemas();
+
+                            foreach (var item in nuevaListaProblemas)
+                            {
+
+                                CargarGrilla(item);
+
+                            }
 
                         }
 
+                        txtDependencia.Enabled = false;
+                        txtObservaciones.Enabled = false;
+                        boxResponsable.Enabled = false;
+                        boxSucursal.Enabled = false;
+                        btnModificar.Enabled = false;
+                        btnAgregar.Enabled = false;
+                        txtDependencia.Text = "";
+                        txtObservaciones.Text = "";
+                        boxResponsable.Text = "";
+                        boxSucursal.Text = "";
+                        lblCodigo.Text = "-";
+                        lblestado.Text = "-";
+                        btnGenerar.Enabled = true;
                     }
-
-                    txtDependencia.Enabled = false;
-                    txtObservaciones.Enabled = false;
-                    boxResponsable.Enabled = false;
-                    boxSucursal.Enabled = false;
-                    btnModificar.Enabled = false;
-                    btnAgregar.Enabled = false;
-                    txtDependencia.Text = "";
-                    txtObservaciones.Text = "";
-                    boxResponsable.Text = "";
-                    boxSucursal.Text = "";
-                    lblCodigo.Text = "-";
-                    lblestado.Text = "-";
-                    btnGenerar.Enabled = true;
                 }
             }
 
@@ -240,7 +251,7 @@ namespace IncidenciasProyect
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
-        {
+        {           
             List<Problema> nuevaListaProblema = new List<Problema>();
             txtDependencia.Enabled = true;
             txtObservaciones.Enabled = true;
@@ -254,6 +265,7 @@ namespace IncidenciasProyect
                 IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
                 if (formInterfaz != null)
                 {
+                    formInterfaz.LeerArchivosTXT();
 
                     int cod = Int32.Parse(lblCodigo.Text);
 
@@ -297,6 +309,7 @@ namespace IncidenciasProyect
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            btnCambiarEstado.Enabled = true;
             btnHabilitarModificacion.Enabled = false;
             btnModificar.Enabled = true;
             txtDependencia.Enabled = true;
@@ -710,7 +723,7 @@ namespace IncidenciasProyect
 
         }
 
-        private void txtCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             grilla.Enabled = true;
 
@@ -721,14 +734,35 @@ namespace IncidenciasProyect
             btnModificar.Enabled = false;
             btnAgregar.Enabled = false;
             txtDependencia.Text = "";
-            txtObservaciones.Text = "";
-            boxResponsable.Text = "";
-            boxSucursal.Text = "";
+            txtObservaciones.Text = "";          
             lblCodigo.Text = "-";
             lblestado.Text = "-";
             btnGenerar.Enabled = true;
 
-            txtCancelar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnCambiarEstado.Enabled = false;
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            grilla.Rows.Clear();
+
+            List<Problema> nuevaListaProblemas = new List<Problema>();
+
+            IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+            if (formInterfaz != null)
+            {
+                formInterfaz.LeerArchivosTXT();
+
+                nuevaListaProblemas = formInterfaz.ObtenerProblemas();
+
+                foreach (var item in nuevaListaProblemas)
+                {
+
+                    CargarGrilla(item);
+
+                }
+            }
         }
     }
 }

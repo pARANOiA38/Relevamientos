@@ -29,7 +29,7 @@ namespace IncidenciasProyect
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grilla = new System.Windows.Forms.DataGridView();
             this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +66,8 @@ namespace IncidenciasProyect
             this.btnCambiarEstado = new System.Windows.Forms.Button();
             this.btnHabilitarModificacion = new System.Windows.Forms.Button();
             this.txtFecha = new System.Windows.Forms.TextBox();
-            this.txtCancelar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grilla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +87,7 @@ namespace IncidenciasProyect
             this.Column4,
             this.Column5,
             this.Eliminar});
-            this.grilla.Location = new System.Drawing.Point(345, 12);
+            this.grilla.Location = new System.Drawing.Point(264, 12);
             this.grilla.Name = "grilla";
             this.grilla.ReadOnly = true;
             this.grilla.Size = new System.Drawing.Size(845, 530);
@@ -132,9 +133,9 @@ namespace IncidenciasProyect
             // 
             // Column5
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column5.HeaderText = "ESTADO";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -258,16 +259,16 @@ namespace IncidenciasProyect
             // 
             // calendario
             // 
-            this.calendario.Location = new System.Drawing.Point(60, 109);
+            this.calendario.Location = new System.Drawing.Point(8, 105);
             this.calendario.Name = "calendario";
             this.calendario.TabIndex = 9;
             this.calendario.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendario_DateChanged);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(1405, 562);
+            this.btnSalir.Location = new System.Drawing.Point(1422, 562);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(65, 31);
+            this.btnSalir.Size = new System.Drawing.Size(47, 31);
             this.btnSalir.TabIndex = 10;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -275,7 +276,7 @@ namespace IncidenciasProyect
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(1199, 562);
+            this.btnAgregar.Location = new System.Drawing.Point(1118, 562);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(98, 23);
             this.btnAgregar.TabIndex = 11;
@@ -286,7 +287,7 @@ namespace IncidenciasProyect
             // txtDependencia
             // 
             this.txtDependencia.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtDependencia.Location = new System.Drawing.Point(1300, 39);
+            this.txtDependencia.Location = new System.Drawing.Point(1219, 39);
             this.txtDependencia.Name = "txtDependencia";
             this.txtDependencia.Size = new System.Drawing.Size(100, 20);
             this.txtDependencia.TabIndex = 23;
@@ -294,7 +295,7 @@ namespace IncidenciasProyect
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(1254, 12);
+            this.lblCodigo.Location = new System.Drawing.Point(1173, 12);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(10, 13);
             this.lblCodigo.TabIndex = 22;
@@ -309,7 +310,7 @@ namespace IncidenciasProyect
             "JAVIER",
             "EMMANUEL",
             "ALEJANDRO"});
-            this.boxResponsable.Location = new System.Drawing.Point(1300, 109);
+            this.boxResponsable.Location = new System.Drawing.Point(1219, 109);
             this.boxResponsable.Name = "boxResponsable";
             this.boxResponsable.Size = new System.Drawing.Size(121, 21);
             this.boxResponsable.TabIndex = 21;
@@ -332,7 +333,7 @@ namespace IncidenciasProyect
             "ADM. CENTRAL",
             "C. PRODUCCION",
             "C. DISTRIBUCION"});
-            this.boxSucursal.Location = new System.Drawing.Point(1300, 76);
+            this.boxSucursal.Location = new System.Drawing.Point(1219, 76);
             this.boxSucursal.Name = "boxSucursal";
             this.boxSucursal.Size = new System.Drawing.Size(121, 21);
             this.boxSucursal.TabIndex = 20;
@@ -340,7 +341,7 @@ namespace IncidenciasProyect
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1196, 112);
+            this.label5.Location = new System.Drawing.Point(1115, 112);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 19;
@@ -349,7 +350,7 @@ namespace IncidenciasProyect
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1196, 79);
+            this.label4.Location = new System.Drawing.Point(1115, 79);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 18;
@@ -358,7 +359,7 @@ namespace IncidenciasProyect
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1196, 42);
+            this.label3.Location = new System.Drawing.Point(1115, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 13);
             this.label3.TabIndex = 17;
@@ -367,7 +368,7 @@ namespace IncidenciasProyect
             // lbl
             // 
             this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(1196, 12);
+            this.lbl.Location = new System.Drawing.Point(1115, 12);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(52, 13);
             this.lbl.TabIndex = 16;
@@ -376,7 +377,7 @@ namespace IncidenciasProyect
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1196, 191);
+            this.label6.Location = new System.Drawing.Point(1115, 191);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 13);
             this.label6.TabIndex = 15;
@@ -384,15 +385,15 @@ namespace IncidenciasProyect
             // 
             // txtObservaciones
             // 
-            this.txtObservaciones.Location = new System.Drawing.Point(1199, 228);
+            this.txtObservaciones.Location = new System.Drawing.Point(1118, 228);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(271, 314);
+            this.txtObservaciones.Size = new System.Drawing.Size(351, 314);
             this.txtObservaciones.TabIndex = 14;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(1303, 562);
+            this.btnModificar.Location = new System.Drawing.Point(1318, 562);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(98, 23);
             this.btnModificar.TabIndex = 24;
@@ -402,7 +403,7 @@ namespace IncidenciasProyect
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(345, 562);
+            this.btnGenerar.Location = new System.Drawing.Point(264, 562);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(226, 23);
             this.btnGenerar.TabIndex = 25;
@@ -413,7 +414,7 @@ namespace IncidenciasProyect
             // lblestado
             // 
             this.lblestado.AutoSize = true;
-            this.lblestado.Location = new System.Drawing.Point(1319, 150);
+            this.lblestado.Location = new System.Drawing.Point(1238, 150);
             this.lblestado.Name = "lblestado";
             this.lblestado.Size = new System.Drawing.Size(10, 13);
             this.lblestado.TabIndex = 26;
@@ -421,7 +422,7 @@ namespace IncidenciasProyect
             // 
             // btnCambiarEstado
             // 
-            this.btnCambiarEstado.Location = new System.Drawing.Point(1196, 145);
+            this.btnCambiarEstado.Location = new System.Drawing.Point(1115, 145);
             this.btnCambiarEstado.Name = "btnCambiarEstado";
             this.btnCambiarEstado.Size = new System.Drawing.Size(117, 23);
             this.btnCambiarEstado.TabIndex = 27;
@@ -431,7 +432,7 @@ namespace IncidenciasProyect
             // 
             // btnHabilitarModificacion
             // 
-            this.btnHabilitarModificacion.Location = new System.Drawing.Point(964, 562);
+            this.btnHabilitarModificacion.Location = new System.Drawing.Point(883, 562);
             this.btnHabilitarModificacion.Name = "btnHabilitarModificacion";
             this.btnHabilitarModificacion.Size = new System.Drawing.Size(226, 23);
             this.btnHabilitarModificacion.TabIndex = 28;
@@ -449,15 +450,25 @@ namespace IncidenciasProyect
             this.txtFecha.TabIndex = 29;
             this.txtFecha.TextChanged += new System.EventHandler(this.txtFecha_TextChanged);
             // 
-            // txtCancelar
+            // btnCancelar
             // 
-            this.txtCancelar.Location = new System.Drawing.Point(577, 562);
-            this.txtCancelar.Name = "txtCancelar";
-            this.txtCancelar.Size = new System.Drawing.Size(98, 23);
-            this.txtCancelar.TabIndex = 30;
-            this.txtCancelar.Text = "CANCELAR ";
-            this.txtCancelar.UseVisualStyleBackColor = true;
-            this.txtCancelar.Click += new System.EventHandler(this.txtCancelar_Click);
+            this.btnCancelar.Location = new System.Drawing.Point(1222, 562);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 23);
+            this.btnCancelar.TabIndex = 30;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 562);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 23);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "ACTUALIZAR LISTA ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // Incidencia
             // 
@@ -465,12 +476,9 @@ namespace IncidenciasProyect
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1370, 605);
-=======
-            this.ClientSize = new System.Drawing.Size(1482, 605);
-            this.Controls.Add(this.txtCancelar);
->>>>>>> 3507ae6272cb8cd9d898889ab46dcfb6c04f46a7
+            this.ClientSize = new System.Drawing.Size(1481, 605);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.btnHabilitarModificacion);
             this.Controls.Add(this.btnCambiarEstado);
@@ -547,6 +555,7 @@ namespace IncidenciasProyect
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewLinkColumn Eliminar;
         private System.Windows.Forms.TextBox txtFecha;
-        private System.Windows.Forms.Button txtCancelar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button button1;
     }
 }

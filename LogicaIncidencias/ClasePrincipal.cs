@@ -10,9 +10,9 @@ namespace LogicaIncidencias
 {
     public class ClasePrincipal
     {
-        const string RutaPruebaArchivos = @"C:\ArchivosTXT";
-        const string RutaPruebaUsuarios = @"C:\ArchivosTXT\Usuarios.txt";
-        const string RutaPruebaProblemas = @"C:\ArchivosTXT\Problemas.txt";
+        const string RutaPruebaArchivos = @"\\172.16.20.30\Files\BaseDeDatosIncidencia";
+        const string RutaPruebaUsuarios = @"\\172.16.20.30\Files\BaseDeDatosIncidencia\Usuarios.txt";
+        const string RutaPruebaProblemas = @"\\172.16.20.30\Files\BaseDeDatosIncidencia\Problemas.txt";
         public  List<Usuario> Usuarios { get; set; }
         public List<Problema> Problemas { get; set; }
 
@@ -87,6 +87,17 @@ namespace LogicaIncidencias
                 cod = Problemas.Count() + 1;
             }
             return cod;
+        }
+
+        public void ReordenarCodigo()
+        {
+            int cod = 1;
+
+            foreach (var item in Problemas)
+            {
+                item.cod = cod;
+                cod = cod + 1;
+            }
         }
 
         public bool ValidarUsuario(string user, string pass)
