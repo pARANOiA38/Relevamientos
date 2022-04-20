@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IncidenciasProyect.exe" size="31736">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IncidenciasProyect.exe" size="231416">
       <assemblyIdentity name="IncidenciasProyect" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MnVhkuB/ongTIxGbPFhYPF6lKyYde8LC/aKz4OFzuTo=</dsig:DigestValue>
+        <dsig:DigestValue>PTdnTuGWYxLE2QY/TrmUmo1K6OzrrufJVLstae2UGuY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

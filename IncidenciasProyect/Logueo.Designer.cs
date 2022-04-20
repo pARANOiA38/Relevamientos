@@ -29,6 +29,7 @@ namespace IncidenciasProyect
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Logueo));
             this.btnEntrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,27 +54,33 @@ namespace IncidenciasProyect
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(88, 96);
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(84, 96);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "USUARIO";
+            this.label1.Text = "USUARIO:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(63, 148);
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(56, 148);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.Size = new System.Drawing.Size(95, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "CONTRASEÑA";
+            this.label2.Text = "CONTRASEÑA:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(175, 51);
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(153, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.Size = new System.Drawing.Size(102, 24);
             this.label3.TabIndex = 3;
             this.label3.Text = "INGRESO";
             // 
@@ -95,11 +102,11 @@ namespace IncidenciasProyect
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(356, 336);
+            this.btnSalir.Location = new System.Drawing.Point(342, 336);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(32, 23);
+            this.btnSalir.Size = new System.Drawing.Size(46, 23);
             this.btnSalir.TabIndex = 5;
-            this.btnSalir.Text = "X";
+            this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -117,9 +124,9 @@ namespace IncidenciasProyect
             // 
             this.btnDesloguearse.Location = new System.Drawing.Point(12, 336);
             this.btnDesloguearse.Name = "btnDesloguearse";
-            this.btnDesloguearse.Size = new System.Drawing.Size(83, 23);
+            this.btnDesloguearse.Size = new System.Drawing.Size(104, 23);
             this.btnDesloguearse.TabIndex = 4;
-            this.btnDesloguearse.Text = "Desloguearse";
+            this.btnDesloguearse.Text = "DESLOGUEARSE";
             this.btnDesloguearse.UseVisualStyleBackColor = true;
             this.btnDesloguearse.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -128,6 +135,7 @@ namespace IncidenciasProyect
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackgroundImage = global::IncidenciasProyect.Properties.Resources.backgroundAPP;
             this.ClientSize = new System.Drawing.Size(400, 371);
             this.Controls.Add(this.btnDesloguearse);
             this.Controls.Add(this.btnIncidencias);
@@ -138,6 +146,7 @@ namespace IncidenciasProyect
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEntrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Logueo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

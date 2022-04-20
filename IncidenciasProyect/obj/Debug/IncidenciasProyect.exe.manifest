@@ -42,26 +42,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IncidenciasProyect.exe" size="231416">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IncidenciasProyect.exe" size="233464">
       <assemblyIdentity name="IncidenciasProyect" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PTdnTuGWYxLE2QY/TrmUmo1K6OzrrufJVLstae2UGuY=</dsig:DigestValue>
+        <dsig:DigestValue>q7RlIMrdNLgIKbH3b+ChKI57PSjQENMrExi+H+ShSGQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LogicaIncidencias.dll" size="9216">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LogicaIncidencias.dll" size="9728">
       <assemblyIdentity name="LogicaIncidencias" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RS+hu7mkGBgfPdXNbXFvmS9cBU74NEi5tRxo6O6PqOQ=</dsig:DigestValue>
+        <dsig:DigestValue>BUSLjnPqZnH0pezeIyJix/0zctoiz58vtu1y4QyyepU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

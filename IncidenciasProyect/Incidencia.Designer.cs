@@ -29,7 +29,8 @@ namespace IncidenciasProyect
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Incidencia));
             this.grilla = new System.Windows.Forms.DataGridView();
             this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +69,8 @@ namespace IncidenciasProyect
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.chboxDependencia = new System.Windows.Forms.CheckBox();
+            this.txtFiltroDependencia = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grilla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +80,7 @@ namespace IncidenciasProyect
             this.grilla.AllowUserToDeleteRows = false;
             this.grilla.AllowUserToResizeColumns = false;
             this.grilla.AllowUserToResizeRows = false;
+            this.grilla.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CODIGO,
@@ -133,9 +137,9 @@ namespace IncidenciasProyect
             // 
             // Column5
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column5.HeaderText = "ESTADO";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -151,8 +155,10 @@ namespace IncidenciasProyect
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(97, 12);
+            this.label1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label1.Location = new System.Drawing.Point(59, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 25);
             this.label1.TabIndex = 1;
@@ -161,50 +167,58 @@ namespace IncidenciasProyect
             // chboxFecha
             // 
             this.chboxFecha.AutoSize = true;
-            this.chboxFecha.Location = new System.Drawing.Point(52, 75);
+            this.chboxFecha.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.chboxFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chboxFecha.Location = new System.Drawing.Point(41, 74);
             this.chboxFecha.Name = "chboxFecha";
             this.chboxFecha.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.chboxFecha.Size = new System.Drawing.Size(64, 17);
+            this.chboxFecha.Size = new System.Drawing.Size(74, 19);
             this.chboxFecha.TabIndex = 2;
             this.chboxFecha.Text = ":FECHA";
             this.chboxFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chboxFecha.UseVisualStyleBackColor = true;
+            this.chboxFecha.UseVisualStyleBackColor = false;
             this.chboxFecha.CheckedChanged += new System.EventHandler(this.chboxFecha_CheckedChanged);
             // 
             // checkBoxResponsable
             // 
             this.checkBoxResponsable.AutoSize = true;
-            this.checkBoxResponsable.Location = new System.Drawing.Point(8, 297);
+            this.checkBoxResponsable.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.checkBoxResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxResponsable.Location = new System.Drawing.Point(3, 296);
             this.checkBoxResponsable.Name = "checkBoxResponsable";
             this.checkBoxResponsable.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxResponsable.Size = new System.Drawing.Size(108, 17);
+            this.checkBoxResponsable.Size = new System.Drawing.Size(130, 19);
             this.checkBoxResponsable.TabIndex = 3;
             this.checkBoxResponsable.Text = ":RESPONSABLE";
-            this.checkBoxResponsable.UseVisualStyleBackColor = true;
+            this.checkBoxResponsable.UseVisualStyleBackColor = false;
             this.checkBoxResponsable.CheckedChanged += new System.EventHandler(this.checkBoxResponsable_CheckedChanged);
             // 
             // checkBoxSucursal
             // 
             this.checkBoxSucursal.AutoSize = true;
+            this.checkBoxSucursal.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.checkBoxSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxSucursal.Location = new System.Drawing.Point(29, 342);
             this.checkBoxSucursal.Name = "checkBoxSucursal";
             this.checkBoxSucursal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxSucursal.Size = new System.Drawing.Size(87, 17);
+            this.checkBoxSucursal.Size = new System.Drawing.Size(103, 19);
             this.checkBoxSucursal.TabIndex = 4;
             this.checkBoxSucursal.Text = ":SUCURSAL";
-            this.checkBoxSucursal.UseVisualStyleBackColor = true;
+            this.checkBoxSucursal.UseVisualStyleBackColor = false;
             this.checkBoxSucursal.CheckedChanged += new System.EventHandler(this.checkBoxSucursal_CheckedChanged);
             // 
             // checkBoxEstado
             // 
             this.checkBoxEstado.AutoSize = true;
-            this.checkBoxEstado.Location = new System.Drawing.Point(43, 385);
+            this.checkBoxEstado.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.checkBoxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxEstado.Location = new System.Drawing.Point(48, 383);
             this.checkBoxEstado.Name = "checkBoxEstado";
             this.checkBoxEstado.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxEstado.Size = new System.Drawing.Size(73, 17);
+            this.checkBoxEstado.Size = new System.Drawing.Size(84, 19);
             this.checkBoxEstado.TabIndex = 5;
             this.checkBoxEstado.Text = ":ESTADO";
-            this.checkBoxEstado.UseVisualStyleBackColor = true;
+            this.checkBoxEstado.UseVisualStyleBackColor = false;
             this.checkBoxEstado.CheckedChanged += new System.EventHandler(this.checkBoxEstado_CheckedChanged);
             // 
             // boxFiltroResp
@@ -215,7 +229,7 @@ namespace IncidenciasProyect
             "JAVIER",
             "EMMANUEL",
             "ALEJANDRO"});
-            this.boxFiltroResp.Location = new System.Drawing.Point(131, 295);
+            this.boxFiltroResp.Location = new System.Drawing.Point(139, 295);
             this.boxFiltroResp.Name = "boxFiltroResp";
             this.boxFiltroResp.Size = new System.Drawing.Size(121, 21);
             this.boxFiltroResp.TabIndex = 6;
@@ -238,7 +252,7 @@ namespace IncidenciasProyect
             "ADM. CENTRAL",
             "C. PRODUCCION",
             "C. DISTRIBUCION"});
-            this.boxFiltroSucursal.Location = new System.Drawing.Point(131, 340);
+            this.boxFiltroSucursal.Location = new System.Drawing.Point(139, 340);
             this.boxFiltroSucursal.Name = "boxFiltroSucursal";
             this.boxFiltroSucursal.Size = new System.Drawing.Size(121, 21);
             this.boxFiltroSucursal.TabIndex = 7;
@@ -250,8 +264,9 @@ namespace IncidenciasProyect
             this.boxFiltroEstado.FormattingEnabled = true;
             this.boxFiltroEstado.Items.AddRange(new object[] {
             "PENDIENTE",
+            "ESPERA",
             "REPARADO"});
-            this.boxFiltroEstado.Location = new System.Drawing.Point(131, 383);
+            this.boxFiltroEstado.Location = new System.Drawing.Point(139, 383);
             this.boxFiltroEstado.Name = "boxFiltroEstado";
             this.boxFiltroEstado.Size = new System.Drawing.Size(121, 21);
             this.boxFiltroEstado.TabIndex = 8;
@@ -287,7 +302,7 @@ namespace IncidenciasProyect
             // txtDependencia
             // 
             this.txtDependencia.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtDependencia.Location = new System.Drawing.Point(1219, 39);
+            this.txtDependencia.Location = new System.Drawing.Point(1238, 40);
             this.txtDependencia.Name = "txtDependencia";
             this.txtDependencia.Size = new System.Drawing.Size(100, 20);
             this.txtDependencia.TabIndex = 23;
@@ -295,9 +310,10 @@ namespace IncidenciasProyect
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(1173, 12);
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(1188, 13);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(10, 13);
+            this.lblCodigo.Size = new System.Drawing.Size(11, 13);
             this.lblCodigo.TabIndex = 22;
             this.lblCodigo.Text = "-";
             // 
@@ -310,7 +326,7 @@ namespace IncidenciasProyect
             "JAVIER",
             "EMMANUEL",
             "ALEJANDRO"});
-            this.boxResponsable.Location = new System.Drawing.Point(1219, 109);
+            this.boxResponsable.Location = new System.Drawing.Point(1238, 106);
             this.boxResponsable.Name = "boxResponsable";
             this.boxResponsable.Size = new System.Drawing.Size(121, 21);
             this.boxResponsable.TabIndex = 21;
@@ -333,7 +349,7 @@ namespace IncidenciasProyect
             "ADM. CENTRAL",
             "C. PRODUCCION",
             "C. DISTRIBUCION"});
-            this.boxSucursal.Location = new System.Drawing.Point(1219, 76);
+            this.boxSucursal.Location = new System.Drawing.Point(1238, 75);
             this.boxSucursal.Name = "boxSucursal";
             this.boxSucursal.Size = new System.Drawing.Size(121, 21);
             this.boxSucursal.TabIndex = 20;
@@ -341,54 +357,64 @@ namespace IncidenciasProyect
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1115, 112);
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1117, 112);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 13);
+            this.label5.Size = new System.Drawing.Size(111, 15);
             this.label5.TabIndex = 19;
             this.label5.Text = "RESPONSABLE:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1115, 79);
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1116, 81);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
+            this.label4.Size = new System.Drawing.Size(84, 15);
             this.label4.TabIndex = 18;
             this.label4.Text = "SUCURSAL:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1115, 42);
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1115, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.Size = new System.Drawing.Size(108, 15);
             this.label3.TabIndex = 17;
             this.label3.Text = "DEPENDENCIA:";
             // 
             // lbl
             // 
             this.lbl.AutoSize = true;
+            this.lbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl.Location = new System.Drawing.Point(1115, 12);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(52, 13);
+            this.lbl.Size = new System.Drawing.Size(64, 15);
             this.lbl.TabIndex = 16;
             this.lbl.Text = "CODIGO:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1115, 191);
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(1117, 181);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 13);
+            this.label6.Size = new System.Drawing.Size(125, 15);
             this.label6.TabIndex = 15;
             this.label6.Text = "OBSERVACIONES:";
             // 
             // txtObservaciones
             // 
-            this.txtObservaciones.Location = new System.Drawing.Point(1118, 228);
+            this.txtObservaciones.Location = new System.Drawing.Point(1118, 207);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(351, 314);
+            this.txtObservaciones.Size = new System.Drawing.Size(351, 343);
             this.txtObservaciones.TabIndex = 14;
             // 
             // btnModificar
@@ -414,9 +440,10 @@ namespace IncidenciasProyect
             // lblestado
             // 
             this.lblestado.AutoSize = true;
+            this.lblestado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblestado.Location = new System.Drawing.Point(1238, 150);
             this.lblestado.Name = "lblestado";
-            this.lblestado.Size = new System.Drawing.Size(10, 13);
+            this.lblestado.Size = new System.Drawing.Size(11, 13);
             this.lblestado.TabIndex = 26;
             this.lblestado.Text = "-";
             // 
@@ -443,7 +470,7 @@ namespace IncidenciasProyect
             // txtFecha
             // 
             this.txtFecha.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtFecha.Location = new System.Drawing.Point(131, 73);
+            this.txtFecha.Location = new System.Drawing.Point(131, 74);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.ReadOnly = true;
             this.txtFecha.Size = new System.Drawing.Size(121, 20);
@@ -470,13 +497,39 @@ namespace IncidenciasProyect
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
+            // chboxDependencia
+            // 
+            this.chboxDependencia.AutoSize = true;
+            this.chboxDependencia.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.chboxDependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chboxDependencia.Location = new System.Drawing.Point(5, 427);
+            this.chboxDependencia.Name = "chboxDependencia";
+            this.chboxDependencia.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.chboxDependencia.Size = new System.Drawing.Size(127, 19);
+            this.chboxDependencia.TabIndex = 32;
+            this.chboxDependencia.Text = ":DEPENDENCIA";
+            this.chboxDependencia.UseVisualStyleBackColor = false;
+            this.chboxDependencia.CheckedChanged += new System.EventHandler(this.chboxDependencia_CheckedChanged);
+            // 
+            // txtFiltroDependencia
+            // 
+            this.txtFiltroDependencia.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtFiltroDependencia.Location = new System.Drawing.Point(139, 427);
+            this.txtFiltroDependencia.Name = "txtFiltroDependencia";
+            this.txtFiltroDependencia.Size = new System.Drawing.Size(121, 20);
+            this.txtFiltroDependencia.TabIndex = 33;
+            this.txtFiltroDependencia.TextChanged += new System.EventHandler(this.txtFiltroDependencia_TextChanged);
+            // 
             // Incidencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackgroundImage = global::IncidenciasProyect.Properties.Resources.backgroundAPP;
             this.ClientSize = new System.Drawing.Size(1481, 605);
+            this.Controls.Add(this.txtFiltroDependencia);
+            this.Controls.Add(this.chboxDependencia);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtFecha);
@@ -507,6 +560,7 @@ namespace IncidenciasProyect
             this.Controls.Add(this.chboxFecha);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grilla);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Incidencia";
             this.Text = "Incidencia";
@@ -557,5 +611,7 @@ namespace IncidenciasProyect
         private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox chboxDependencia;
+        private System.Windows.Forms.TextBox txtFiltroDependencia;
     }
 }

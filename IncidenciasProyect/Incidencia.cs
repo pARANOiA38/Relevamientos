@@ -37,7 +37,15 @@ namespace IncidenciasProyect
             }
             else
             {
-                grilla.Rows[n].Cells[6].Style.BackColor = Color.Green;
+                if (item.estado == "REPARADO")
+                {
+                    grilla.Rows[n].Cells[6].Style.BackColor = Color.Green;
+                }
+                else
+                {
+                    grilla.Rows[n].Cells[6].Style.BackColor = Color.Orange;
+                }
+                
             }
         }
         private void Incidencia_Load(object sender, EventArgs e)
@@ -246,7 +254,14 @@ namespace IncidenciasProyect
             }
             else
             {
-                lblestado.Text = "PENDIENTE";
+                if (lblestado.Text == "REPARADO")
+                {
+                    lblestado.Text = "ESPERA";
+                }
+                else
+                {
+                    lblestado.Text = "PENDIENTE";
+                }
             }
         }
 
@@ -336,6 +351,7 @@ namespace IncidenciasProyect
                 checkBoxEstado.Enabled = false;
                 chboxFecha.Enabled = false;
                 checkBoxSucursal.Enabled = false;
+                chboxDependencia.Enabled = false;
 
                 IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
                 if (formInterfaz != null)
@@ -372,6 +388,7 @@ namespace IncidenciasProyect
                     checkBoxEstado.Enabled = true;
                     chboxFecha.Enabled = true;
                     checkBoxSucursal.Enabled = true;
+                    chboxDependencia.Enabled = true;
                 }
 
             }
@@ -388,6 +405,7 @@ namespace IncidenciasProyect
                 checkBoxEstado.Enabled = false;
                 chboxFecha.Enabled = false;
                 checkBoxResponsable.Enabled = false;
+                chboxDependencia.Enabled = false;
 
                 IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
                 if (formInterfaz != null)
@@ -424,6 +442,7 @@ namespace IncidenciasProyect
                     checkBoxEstado.Enabled = true;
                     chboxFecha.Enabled = true;
                     checkBoxResponsable.Enabled = true;
+                    chboxDependencia.Enabled = true;
                 }
             }
         }
@@ -437,6 +456,7 @@ namespace IncidenciasProyect
                 checkBoxSucursal.Enabled = false;
                 chboxFecha.Enabled = false;
                 checkBoxResponsable.Enabled = false;
+                chboxDependencia.Enabled = false;
 
                 IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
                 if (formInterfaz != null)
@@ -473,6 +493,7 @@ namespace IncidenciasProyect
                     checkBoxSucursal.Enabled = true;
                     chboxFecha.Enabled = true;
                     checkBoxResponsable.Enabled = true;
+                    chboxDependencia.Enabled = true;
                 }
             }
         }
@@ -486,6 +507,7 @@ namespace IncidenciasProyect
                 checkBoxSucursal.Enabled = false;
                 checkBoxEstado.Enabled = false;
                 checkBoxResponsable.Enabled = false;
+                chboxDependencia.Enabled = false;
 
                 IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
                 if (formInterfaz != null)
@@ -522,6 +544,7 @@ namespace IncidenciasProyect
                     checkBoxSucursal.Enabled = true;
                     checkBoxEstado.Enabled = true;
                     checkBoxResponsable.Enabled = true;
+                    chboxDependencia.Enabled = true;
                 }
             }
         }
@@ -535,6 +558,7 @@ namespace IncidenciasProyect
                 checkBoxEstado.Enabled = false;
                 chboxFecha.Enabled = false;
                 checkBoxSucursal.Enabled = false;
+                chboxDependencia.Enabled = false;
 
                 IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
                 if (formInterfaz != null)
@@ -570,6 +594,7 @@ namespace IncidenciasProyect
                     checkBoxEstado.Enabled = true;
                     chboxFecha.Enabled = true;
                     checkBoxSucursal.Enabled = true;
+                    chboxDependencia.Enabled = true;
                 }
 
             }
@@ -585,6 +610,7 @@ namespace IncidenciasProyect
                 checkBoxSucursal.Enabled = false;
                 checkBoxEstado.Enabled = false;
                 checkBoxResponsable.Enabled = false;
+                chboxDependencia.Enabled = false;
 
                 IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
                 if (formInterfaz != null)
@@ -620,6 +646,7 @@ namespace IncidenciasProyect
                     checkBoxSucursal.Enabled = true;
                     checkBoxEstado.Enabled = true;
                     checkBoxResponsable.Enabled = true;
+                    chboxDependencia.Enabled = true;
                 }
             }
 
@@ -634,6 +661,7 @@ namespace IncidenciasProyect
                 checkBoxEstado.Enabled = false;
                 chboxFecha.Enabled = false;
                 checkBoxResponsable.Enabled = false;
+                chboxDependencia.Enabled = false;
 
                 IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
                 if (formInterfaz != null)
@@ -669,6 +697,7 @@ namespace IncidenciasProyect
                     checkBoxEstado.Enabled = true;
                     chboxFecha.Enabled = true;
                     checkBoxResponsable.Enabled = true;
+                    chboxDependencia.Enabled = true;
                 }
             }
 
@@ -683,6 +712,7 @@ namespace IncidenciasProyect
                 checkBoxSucursal.Enabled = false;
                 chboxFecha.Enabled = false;
                 checkBoxResponsable.Enabled = false;
+                chboxDependencia.Enabled = false;
 
                 IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
                 if (formInterfaz != null)
@@ -718,6 +748,7 @@ namespace IncidenciasProyect
                     checkBoxSucursal.Enabled = true;
                     chboxFecha.Enabled = true;
                     checkBoxResponsable.Enabled = true;
+                    chboxDependencia.Enabled = true;
                 }
             }
 
@@ -763,6 +794,108 @@ namespace IncidenciasProyect
 
                 }
             }
+        }
+
+        private void chboxDependencia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chboxDependencia.Checked == true && txtFiltroDependencia.Text != "")
+            {
+                grilla.Rows.Clear();
+
+                checkBoxSucursal.Enabled = false;
+                checkBoxEstado.Enabled = false;
+                checkBoxResponsable.Enabled = false;
+                chboxFecha.Enabled = false;
+
+                IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                if (formInterfaz != null)
+                {
+                    List<Problema> listFiltrada = formInterfaz.ObtenerProblemas();
+
+                    foreach (var item in listFiltrada)
+                    {
+                        if (item.dependencia == txtFiltroDependencia.Text)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (chboxDependencia.Checked == false)
+                {
+                    txtFiltroDependencia.Text = "";
+                    grilla.Rows.Clear();
+
+                    IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                    if (formInterfaz != null)
+                    {
+                        List<Problema> listNormal = formInterfaz.ObtenerProblemas();
+
+                        foreach (var item in listNormal)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+
+                    checkBoxSucursal.Enabled = true;
+                    checkBoxEstado.Enabled = true;
+                    checkBoxResponsable.Enabled = true;
+                    chboxFecha.Enabled = true;
+                }
+            }
+        }
+
+        private void txtFiltroDependencia_TextChanged(object sender, EventArgs e)
+        {
+            if (chboxDependencia.Checked == true && txtFiltroDependencia.Text != "")
+            {
+                grilla.Rows.Clear();
+
+                checkBoxSucursal.Enabled = false;
+                checkBoxEstado.Enabled = false;
+                checkBoxResponsable.Enabled = false;
+                chboxFecha.Enabled = false;
+
+                IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                if (formInterfaz != null)
+                {
+                    List<Problema> listFiltrada = formInterfaz.ObtenerProblemas();
+
+                    foreach (var item in listFiltrada)
+                    {
+                        if (item.dependencia.Contains(txtFiltroDependencia.Text.Trim()))
+                        {
+                            CargarGrilla(item);
+                        }                      
+                    }
+                }
+            }
+            else
+            {
+                if (chboxDependencia.Checked == false)
+                {
+                    grilla.Rows.Clear();
+
+                    IFuncionesYmetodosUsuario formInterfaz = this.Owner as IFuncionesYmetodosUsuario;
+                    if (formInterfaz != null)
+                    {
+                        List<Problema> listNormal = formInterfaz.ObtenerProblemas();
+
+                        foreach (var item in listNormal)
+                        {
+                            CargarGrilla(item);
+                        }
+                    }
+
+                    checkBoxSucursal.Enabled = true;
+                    chboxFecha.Enabled = true;
+                    checkBoxResponsable.Enabled = true;
+                    chboxFecha.Enabled = true;
+                }
+            }
+
         }
     }
 }
